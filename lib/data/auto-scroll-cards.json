@@ -1,7 +1,7 @@
 [
   {
     "id": "Hipic-Features-Card",
-    "src": "/images/projects/Hipic.png",
+    "src": "/images/projects/HiPic.png",
     "alt": "HiPic Features Card",
     "width": 360,
     "height": 220
@@ -44,7 +44,7 @@
 
   {
     "id": "Cards-2x2",
-    "src": "/images/projects/LandingPage.png",
+    "src": "/images/projects/Landingpage.png",
     "alt": "Cards 2x2",
     "width": 360,
     "height": 220
