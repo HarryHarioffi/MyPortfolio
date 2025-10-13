@@ -18,7 +18,6 @@ export default function HomePage() {
     <main className="relative mx-auto max-w-7xl px-6 pt-28 pb-24">
       <DotGridBackground />
       <section className="mt-20">
-        <h1 className="sr-only">Anuhya – Senior Product Designer</h1>
         <ScrollHighlightText
           lines={LINES}
           className="text-pretty text-2xl leading-snug md:text-5xl md:leading-tight lg:text-6xl"
