@@ -22,19 +22,19 @@ export function SiteFooter() {
           {/* Right content */}
           <div className="flex flex-col">
             <p className="text-sm text-muted-foreground">
-              {"You've made it to the end of quite the scroll.. Great job!"}
+              {"Thanks for scrolling this far — it means a lot!"}
             </p>
             <h2 className="mt-2 text-pretty text-3xl font-semibold leading-tight text-foreground md:text-5xl lg:text-6xl">
-              {"In some other universe, we're already friends. So why not in this one?"}
+              {"If my work resonates with you, I’d love to connect and explore what we can build together."}
             </h2>
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
-                href="mailto:hello@example.com"
+                href="mailto:shariharasudhan2002@gmail.com"
                 className="group inline-flex items-center gap-3 rounded-full bg-muted/30 px-5 py-3 text-base text-foreground ring-1 ring-border/40 transition-colors hover:bg-muted/40"
               >
-                <span className="opacity-90">hello@example.com</span>
+                <span className="opacity-90">shariharasudhan2002@gmail.com</span>
                 <svg 
                 className="h-4 w-4" 
                 viewBox="0 0 24 24" 
@@ -50,7 +50,7 @@ export function SiteFooter() {
               </Link>
 
               <Link
-                href="https://drive.google.com/file/d/REPLACE_WITH_YOUR_ID/view"
+                href="https://drive.google.com/file/d/1SLq0OM38gf8waX0CyioEzj5d9sVdxgjT/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 rounded-full bg-muted/20 px-5 py-3 text-base text-foreground ring-1 ring-border/40 transition-colors hover:bg-muted/30"

@@ -1,42 +1,42 @@
 [
   {
-    "id": "gmail-people-card",
-    "company": "Google",
+    "id": "side-panel",
+    "company": "Echo Desk",
     "status": "Shipped",
-    "year": 2024,
-    "title": "Modernizing the Gmail's - People Card",
-    "description": "Led redesign of Workspace People Hover card used by millions, modernizing UX with rich, glanceable information and customization options. Improved user efficiency while establishing scalable patterns for consumer and enterprise needs.",
-    "image": "/images/projects/gmail-people-card.png",
+    "year": 2025,
+    "title": "Designing a Contextual Side Panel for AI Management Platform",
+    "description": "Redesigned an internal AI management system by introducing a contextual side panel that allows users to access detailed AI requisition data without losing context. The design improved data visibility, streamlined workflow, and set a scalable pattern for future AI tools.",
+    "image": "/images/projects/Project1Cover.png",
     "href": "#"
   },
   {
-    "id": "analytics-suite",
-    "company": "Acme Analytics",
+    "id": "ai-collaboration-system",
+    "company": "StrataAI",
+    "status": "Shipped",
+    "year": 2025,
+    "title": "Designing a Modular AI Collaboration System",
+    "description": "Developed a modular AI workspace enabling users to build Agent-specific chat environments powered by unique system prompts and dedicated data sources. Enhanced control, collaboration, and governance through structured access levels and scalable workspace hierarchies.",
+    "image": "/images/projects/Project2Cover.png",
+    "href": "#"
+  },
+  {
+    "id": "project-management-hub",
+    "company": "Project Hub",
+    "status": "Concept",
+    "year": 2024,
+    "title": "Project Management Hub — Unified Workflow Dashboard",
+    "description": "Designed a centralized dashboard that connects projects, functionalities, and resources like Figma, SQL, and API flows — streamlining visibility and collaboration across design and development teams.",
+    "image": "/images/projects/Project3Cover.png",
+    "href": "#"
+  },
+  {
+    "id": "fleet-sense",
+    "company": "EngineSight",
     "status": "Shipped",
     "year": 2023,
-    "title": "Analytics Suite — Insights Dashboard",
-    "description": "Built a modular analytics dashboard with drill-down cards and live metrics. Elevated information density without sacrificing clarity, accelerating decision-making across teams.",
-    "image": "/images/projects/dashboard-analytics.jpg",
+    "title": "EngineSight — Fleet & Engine Performance Dashboard",
+    "description": "Designed a unified performance dashboard for monitoring fleet and engine efficiency. Streamlined data visualization enabled teams to track health, performance, and maintenance with clarity and precision.",
+    "image": "/images/projects/Project4Cover.png",
     "href": "#"
-  },
-  {
-    "id": "fintech-payments",
-    "company": "FinPay",
-    "status": "Case Study",
-    "year": 2022,
-    "title": "Fintech Payments — Checkout Flow",
-    "description": "Redesigned checkout to support multi-currency and localized compliance. Reduced friction with progressive disclosure and contextual validation.",
-    "image": "/images/projects/fintech-payments.jpg",
-    "href": "#"
-  },
-  {
-    "id": "healthcare-portal",
-    "company": "WellCare",
-    "status": "Shipped",
-    "year": 2024,
-    "title": "Healthcare Portal — Patient Cards",
-    "description": "Introduced structured, glanceable patient cards enabling faster triage. Improved accessibility and consistency across complex workflows.",
-    "image": "/images/projects/healthcare-portal.jpg",
-    "href": "#"
-  }
+  }  
 ]

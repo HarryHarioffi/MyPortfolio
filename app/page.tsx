@@ -8,7 +8,7 @@ export const dynamic = "force-static"
 export const revalidate = 3600
 
 const LINES = [
-  "Hey 👋 I’m Hari, a curious Product Designer who loves learning through exploration.",
+  "Hey 👋 I’m Hariharasudhan, a curious Product Designer who loves learning through exploration.",
   "Ideas into clear, effortless experiences that just feel right",
   "Outside of design, I’m probably looping a song or lost in a movie, series, or anime",
 ]

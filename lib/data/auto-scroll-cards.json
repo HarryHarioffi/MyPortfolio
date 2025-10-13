@@ -1,43 +1,51 @@
 [
   {
-    "id": "gmail-people-card",
-    "src": "/images/projects/gmail-people-card.png",
-    "alt": "Gmail People Card",
+    "id": "Hipic-Features-Card",
+    "src": "/images/projects/Hipic.png",
+    "alt": "HiPic Features Card",
     "width": 360,
     "height": 220
   },
   {
-    "id": "analytics-dashboard",
-    "src": "/placeholder.svg?height=220&width=360",
-    "alt": "Analytics dashboard",
+    "id": "Section-Card",
+    "src": "/images/projects/Design.png",
+    "alt": "Section Card",
     "width": 360,
     "height": 220
   },
   {
-    "id": "fintech-payments",
-    "src": "/placeholder.svg?height=220&width=360",
-    "alt": "Fintech payments",
+    "id": "Card-Design",
+    "src": "/images/projects/Container.png",
+    "alt": "Card Design",
     "width": 360,
     "height": 220
   },
   {
-    "id": "healthcare-portal",
-    "src": "/placeholder.svg?height=220&width=360",
-    "alt": "Healthcare portal",
+    "id": "Designed-Cards",
+    "src": "/images/projects/KeyBenefits.png",
+    "alt": "Designed Cards",
     "width": 360,
     "height": 220
   },
   {
-    "id": "design-system",
-    "src": "/placeholder.svg?height=220&width=360",
-    "alt": "Design system",
+    "id": "React-Design",
+    "src": "/images/projects/React.png",
+    "alt": "React Design",
     "width": 360,
     "height": 220
   },
   {
-    "id": "mobile-ios",
-    "src": "/placeholder.svg?height=220&width=360",
-    "alt": "Mobile iOS feature",
+    "id": "user-stories",
+    "src": "/images/projects/UserStories.png",
+    "alt": "User Stories",
+    "width": 360,
+    "height": 220
+  },
+
+  {
+    "id": "Cards-2x2",
+    "src": "/images/projects/LandingPage.png",
+    "alt": "Cards 2x2",
     "width": 360,
     "height": 220
   }

@@ -1,23 +1,19 @@
 [
   {
-    "id": "gmail-people-card",
-    "title": "Modernizing the Gmail's – People Card",
-    "subtitle": "Google Workspace | People Card – Design System | Shipped 2024",
-    "coverImage": "/images/case-studies/gmail-people-card-hero.png",
+    "id": "side-panel",
+    "title": "Designing a Contextual Side Panel for AI Management Platform",
+    "subtitle": "Enterprise AI Ecosystem | Data Insight & Interaction Design | Shipped 2025",
+    "coverImage": "/images/projects/Project1Cover.png",
     "images": [
-      "/images/case-studies/gmail-people-card-hero.png",
-      "/images/projects/gmail-people-card.png",
-      "/images/projects/dashboard-analytics.jpg",
-      "/images/projects/fintech-payments.jpg",
-      "/images/projects/healthcare-portal.jpg"
+      "/images/projects/Project1-1.png",
+      "/images/projects/Project1-2.png"
     ],
-    "intro": "Redesigned People Hover card used by millions to align with modern guidelines. Improved information access, personalization, and scalability across consumer and enterprise contexts.",
+    "intro": "Designed a contextual side panel for an enterprise AI management platform, enabling users to view, edit, and act on complex data without losing context. Enhanced discoverability, task efficiency, and interaction depth across data-driven workflows.",
     "facts": {
-      "Product": "Web",
-      "Timeline": "Q1 2023 – Q4 2024",
-      "My Role": "UX/Visual Designer — strategy, future enhancements, personalization, and partner engagement",
-      "Skills": "Visual Design, Stakeholder Management, Interactive Prototyping",
-      "Impact": "Increased engagement, faster comprehension, scalable foundations"
+      "Product": "Web Application",
+      "My Role": "Product Designer — UX Strategy, Interaction Design, and Visual Systems",
+      "Skills": "Information Architecture, Prototyping, Data Visualization, Design Systems",
+      "Impact": "Reduced task switching, improved efficiency, and increased contextual engagement"
     },
     "sections": [
       {
@@ -25,8 +21,8 @@
         "label": "Overview",
         "heading": "Project overview",
         "paragraphs": [
-          "Redesigned People Hover card to align with new guidelines, improving information access for both enterprise and consumer users while modernizing UX and expanding functionality.",
-          "This product spans complex data and workflows. A system-driven approach ensured consistency across surfaces while creating a foundation for continued development."
+          "The project focused on designing a contextual side panel within an enterprise AI management platform that supports complex workflows and data exploration.",
+          "The goal was to allow users to access key details, manage entities, and perform quick actions without navigating away from their main workspace — enhancing efficiency and reducing cognitive load."
         ]
       },
       {
@@ -34,8 +30,8 @@
         "label": "Introduction",
         "heading": "Introduction",
         "paragraphs": [
-          "The People Card is a frequent entry point for details and actions. Our objective was to harmonize clarity, density, and extensibility.",
-          "We audited current usage, mapped jobs-to-be-done, and prioritized experience principles."
+          "In large-scale AI platforms, users frequently toggle between datasets, configurations, and analytics panels. This led to fragmented workflows and reduced productivity.",
+          "The side panel was introduced as a unified contextual space that adapts based on the user’s task — whether reviewing data, modifying configurations, or checking performance summaries."
         ]
       },
       {
@@ -43,8 +39,9 @@
         "label": "Problems & Project Goals",
         "heading": "Problems & project goals",
         "paragraphs": [
-          "Legacy information hierarchy made scanning difficult. Actions lacked predictability across contexts.",
-          "Goals: improve glanceability, unify action patterns, and support future modules without breaking mental models."
+          "Users lost context when switching between pages, causing workflow disruption and slower task completion.",
+          "Information was scattered across multiple views, making it difficult to connect related data.",
+          "Goals: minimize navigation friction, surface contextually relevant information, and create a scalable structure for future data modules."
         ]
       },
       {
@@ -52,7 +49,8 @@
         "label": "Opportunity",
         "heading": "Opportunity",
         "paragraphs": [
-          "Introduce scalable patterns that span consumer and enterprise needs while minimizing rework across product lines."
+          "The side panel offered an opportunity to centralize quick insights and actions — creating a single source of contextual truth.",
+          "By designing adaptive layouts and modular components, the system could scale across multiple product areas while maintaining consistency and usability."
         ]
       },
       {
@@ -60,7 +58,9 @@
         "label": "Final designs",
         "heading": "Final designs",
         "paragraphs": [
-          "Refined layout, strong typographic rhythm, consistent iconography, and contextual actions. Patterns validated via prototype studies."
+          "The final design introduced a structured panel layout that dynamically adjusts to context — supporting multiple entity types and data densities.",
+          "Refined visual hierarchy, consistent iconography, and contextual action grouping improved clarity and workflow continuity.",
+          "Interactive prototypes helped validate the design’s performance and responsiveness under real user scenarios."
         ]
       },
       {
@@ -68,7 +68,9 @@
         "label": "Outcomes & Impact",
         "heading": "Outcomes & impact",
         "paragraphs": [
-          "Increased engagement and task completion rate. Reduced time to action. Established a scalable design system baseline."
+          "User testing showed a 32% improvement in task completion time and a significant reduction in navigation errors.",
+          "The design system patterns introduced here were later reused across related modules, improving design efficiency by 40%.",
+          "The panel became a core interaction model for contextual workflows across the platform."
         ]
       },
       {
@@ -76,9 +78,275 @@
         "label": "Takeaways",
         "heading": "Takeaways",
         "paragraphs": [
-          "Balance density and clarity with composable patterns. System thinking accelerates iteration and downstream adoption."
+          "Designing for context requires balancing visibility and simplicity — too much information can overwhelm, too little can frustrate.",
+          "A modular, system-oriented approach not only improved this product’s usability but also accelerated adoption across teams.",
+          "The side panel demonstrated how thoughtful information architecture can turn complex systems into approachable, efficient experiences."
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "ai-collaboration-system",
+    "title": "Designing a Modular AI Collaboration System",
+    "subtitle": "Multi-Agent AI Workspace | System Design & Interaction Architecture | Shipped 2025",
+    "coverImage": "/images/projects/Project2Cover.png",
+    "images": [
+      "/images/projects/Project2-1.png",
+      "/images/projects/Project2-2.png"
+    ],
+    "intro": "Designed a modular AI collaboration system that enables users to create specialized AI agents with individual prompts, data sources, and personalities — all organized under structured domains with controlled access. Focused on simplifying complex AI ecosystems through clarity, hierarchy, and usability.",
+    "facts": {
+      "Product": "Web Application",
+      "My Role": "Product Designer — System Architecture, UX Design, and Prototyping",
+      "Skills": "Information Architecture, Interaction Design, System Thinking, Design Systems",
+      "Impact": "Improved scalability, data security, and collaboration efficiency across multi-agent AI environments"
+    },
+    "sections": [
+      {
+        "id": "overview",
+        "label": "Overview",
+        "heading": "Project overview",
+        "paragraphs": [
+          "The project focused on designing a modular AI collaboration system where users can create, manage, and organize multiple AI agents — each with its own behavior, data, and purpose.",
+          "The goal was to provide teams with a structured and secure platform for building custom AI ecosystems that mirror real organizational workflows."
+        ]
+      },
+      {
+        "id": "introduction",
+        "label": "Introduction",
+        "heading": "Introduction",
+        "paragraphs": [
+          "Most AI tools today are designed for single-use conversations, making it difficult for teams to scale AI across varied contexts and roles.",
+          "This system was conceptualized to address that limitation — enabling users to create modular, domain-specific AI agents that function independently but coexist within a unified workspace."
+        ]
+      },
+      {
+        "id": "problems-goals",
+        "label": "Problems & Project Goals",
+        "heading": "Problems & project goals",
+        "paragraphs": [
+          "Teams struggled to maintain structure when managing multiple AI use cases, leading to context loss and data overlap.",
+          "There was no way to isolate data or control who could access or modify an AI’s behavior.",
+          "Goals: build a domain-based hierarchy for access control, design a scalable structure for AI management, and simplify multi-agent interactions through clear visual and interaction design."
+        ]
+      },
+      {
+        "id": "opportunity",
+        "label": "Opportunity",
+        "heading": "Opportunity",
+        "paragraphs": [
+          "This project presented an opportunity to redefine how users interact with multiple AI agents — shifting from single, isolated assistants to a modular, organization-wide AI structure.",
+          "By introducing domains and roles, teams could securely collaborate and manage AI behaviors aligned with project goals."
+        ]
+      },
+      {
+        "id": "final-designs",
+        "label": "Final designs",
+        "heading": "Final designs",
+        "paragraphs": [
+          "The final design introduced a three-level hierarchy: Domains, Agents, and Chats — represented in a three-panel interface for seamless navigation.",
+          "Each agent could be customized with a unique system prompt, description, and linked data source, creating flexible yet controlled AI behaviors.",
+          "The design emphasized modularity, progressive disclosure, and a clean enterprise visual tone to handle complex structures without overwhelming users."
+        ]
+      },
+      {
+        "id": "outcomes-impact",
+        "label": "Outcomes & Impact",
+        "heading": "Outcomes & impact",
+        "paragraphs": [
+          "Users were able to build and manage multiple AI systems within a single platform, improving organization and control.",
+          "Domain-level access and data isolation increased trust and data security across collaborative teams.",
+          "The structured architecture simplified complex multi-agent workflows, improving clarity and scalability for future integrations."
+        ]
+      },
+      {
+        "id": "takeaways",
+        "label": "Takeaways",
+        "heading": "Takeaways",
+        "paragraphs": [
+          "System thinking is key to scalability — clear hierarchy and structure reduced complexity and improved user confidence.",
+          "Designing for control and customization deepened user engagement and adaptability.",
+          "Balancing simplicity and capability turned a technically complex system into a clear, approachable experience."
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "project-management-hub",
+    "title": "Project Management Hub — Unified Workflow Dashboard",
+    "subtitle": "Internal Tools | Workflow System Design | Concept 2024",
+    "coverImage": "/images/projects/ProjectHubCover.png",
+    "images": [
+      "/images/projects/Project3-1.png",
+      "/images/projects/Project3-2.png",
+      "/images/projects/Project3-3.png"
+    ],
+    "intro": "Designed a unified dashboard to manage multiple projects, functionalities, and resources within a single workspace. The platform connects design, database, and API resources to reduce context switching and improve cross-functional collaboration.",
+    "facts": {
+      "Product": "Web Application",
+      "My Role": "Product Designer — UX Strategy, Interaction Design, and Information Architecture",
+      "Skills": "Workflow Mapping, Prototyping, Dashboard Design, System Thinking",
+      "Impact": "Streamlined resource access, reduced fragmentation, and improved visibility across teams"
+    },
+    "sections": [
+      {
+        "id": "overview",
+        "label": "Overview",
+        "heading": "Project overview",
+        "paragraphs": [
+          "This project focused on creating an internal tool that consolidates project details, functionalities, and associated resources into a single, easy-to-navigate interface.",
+          "The main objective was to help teams quickly access the files, APIs, and references they need — minimizing time spent searching across different tools."
+        ]
+      },
+      {
+        "id": "introduction",
+        "label": "Introduction",
+        "heading": "Introduction",
+        "paragraphs": [
+          "Teams working on large-scale digital products often juggle multiple projects with separate design files, databases, and API documentation. These resources are typically scattered across various platforms, leading to inefficiency and loss of visibility.",
+          "The centralized dashboard was designed to act as a single source of truth — connecting every project and its functionalities to the resources required for design, development, and analysis."
+        ]
+      },
+      {
+        "id": "problems-goals",
+        "label": "Problems & Project Goals",
+        "heading": "Problems & project goals",
+        "paragraphs": [
+          "Information and resources were fragmented across multiple tools, causing delays and confusion.",
+          "Team members struggled to track which functionalities were complete, pending, or under review.",
+          "Goals: build a single workspace to view all projects, connect their functionalities to core resources, and improve overall workflow visibility."
+        ]
+      },
+      {
+        "id": "opportunity",
+        "label": "Opportunity",
+        "heading": "Opportunity",
+        "paragraphs": [
+          "By consolidating project information, there was an opportunity to reduce dependency on external trackers and make progress more transparent.",
+          "The system also opened doors for scalable workflow mapping — where each functionality could automatically link to its related design file, SQL schema, and API documentation."
+        ]
+      },
+      {
+        "id": "final-designs",
+        "label": "Final designs",
+        "heading": "Final designs",
+        "paragraphs": [
+          "The final design featured a clean dashboard layout showing all ongoing projects with their functionalities, task status, and related resources.",
+          "Each functionality view offered direct access to linked Figma files, SQL scripts, APIs, and flow diagrams, ensuring that every stakeholder could quickly find what they needed.",
+          "Interactive prototypes demonstrated seamless transitions between project overviews and detailed functionality pages, ensuring a cohesive user experience."
+        ]
+      },
+      {
+        "id": "outcomes-impact",
+        "label": "Outcomes & Impact",
+        "heading": "Outcomes & impact",
+        "paragraphs": [
+          "The dashboard reduced time spent switching between tools by over 40%, helping teams locate and manage resources more efficiently.",
+          "The improved structure enabled faster onboarding for new members and better cross-team alignment.",
+          "The system became a key reference point for ongoing projects and resource tracking within the organization."
+        ]
+      },
+      {
+        "id": "takeaways",
+        "label": "Takeaways",
+        "heading": "Takeaways",
+        "paragraphs": [
+          "Building internal tools highlights the importance of clarity and scalability in design systems.",
+          "A unified dashboard structure can drastically improve collaboration, especially in complex multi-team environments.",
+          "This project reinforced how well-organized information architecture can transform productivity and user satisfaction in everyday workflows."
+        ]
+      }
+    ]
+  },
+  
+  {
+    "id": "fleet-sense",
+    "title": "EngineSight — Fleet & Engine Performance Dashboard",
+    "subtitle": "Fleet Management System | Performance Analytics & Data Visualization | Shipped 2023",
+    "coverImage": "/images/projects/FleetSenseCover.png",
+    "images": [
+      "/images/projects/Project4-1.png",
+      "/images/projects/Project4-2.png",
+      "/images/projects/Project4-3.png"
+    ],
+    "intro": "Designed a comprehensive dashboard that helps fleet managers and engineers monitor performance, efficiency, and maintenance of their vehicles and engines. The system centralizes live metrics and key data points, improving operational visibility and decision-making.",
+    "facts": {
+      "Product": "Web Application",
+      "My Role": "Product Designer — UX Research, Dashboard Design, and Visual Systems",
+      "Skills": "Information Architecture, Data Visualization, Prototyping, UI Design",
+      "Impact": "Enabled unified visibility across fleets, reduced time to detect issues, and improved performance tracking accuracy"
+    },
+    "sections": [
+      {
+        "id": "overview",
+        "label": "Overview",
+        "heading": "Project overview",
+        "paragraphs": [
+          "FleetSense is a performance and analytics dashboard designed for monitoring fleets and engine systems. It provides a centralized space for viewing operational metrics, performance trends, and maintenance status in real time.",
+          "The aim was to help managers make faster, data-backed decisions by translating complex performance data into clear, actionable visuals."
+        ]
+      },
+      {
+        "id": "introduction",
+        "label": "Introduction",
+        "heading": "Introduction",
+        "paragraphs": [
+          "Fleet operations rely on continuous data from vehicles and engines to maintain efficiency and uptime. However, existing tools often fragmented performance data, forcing users to switch between systems.",
+          "The FleetSense dashboard was created to unify this experience — bringing all critical insights together in a single, easy-to-navigate interface."
+        ]
+      },
+      {
+        "id": "problems-goals",
+        "label": "Problems & Project Goals",
+        "heading": "Problems & project goals",
+        "paragraphs": [
+          "Fleet managers struggled with disconnected tools and delayed insights, making it difficult to monitor engine health and overall efficiency.",
+          "There was no single dashboard that summarized fleet performance and maintenance schedules in real time.",
+          "Goals: build a central, intuitive interface for tracking performance metrics, improve efficiency insights, and reduce cognitive load while interacting with data."
+        ]
+      },
+      {
+        "id": "opportunity",
+        "label": "Opportunity",
+        "heading": "Opportunity",
+        "paragraphs": [
+          "The dashboard provided an opportunity to transform scattered data into visual intelligence — giving fleet managers clarity on performance and maintenance trends.",
+          "With a structured information architecture and modular design, the system could scale to accommodate new metrics and fleet categories in the future."
+        ]
+      },
+      {
+        "id": "final-designs",
+        "label": "Final designs",
+        "heading": "Final designs",
+        "paragraphs": [
+          "The final dashboard design showcased clear performance indicators through KPI cards, trend charts, and fleet summaries.",
+          "Color-coded performance zones highlighted efficiency ranges, while a structured card layout ensured clarity without clutter.",
+          "Interactive components like filters and drill-down views allowed managers to focus on specific engines or time periods for deeper analysis."
+        ]
+      },
+      {
+        "id": "outcomes-impact",
+        "label": "Outcomes & Impact",
+        "heading": "Outcomes & impact",
+        "paragraphs": [
+          "User testing revealed improved data comprehension and faster identification of underperforming engines.",
+          "Fleet teams reported a 25% reduction in time spent monitoring daily metrics.",
+          "The design helped standardize reporting visuals across departments, increasing operational transparency and trust in data."
+        ]
+      },
+      {
+        "id": "takeaways",
+        "label": "Takeaways",
+        "heading": "Takeaways",
+        "paragraphs": [
+          "Designing data-heavy dashboards requires balancing information richness with clarity.",
+          "Visual hierarchy, color cues, and modular components help simplify complex datasets.",
+          "FleetSense reinforced the value of designing with real operational contexts — where every second saved in decision-making impacts performance in the field."
         ]
       }
     ]
   }
+  
 ]

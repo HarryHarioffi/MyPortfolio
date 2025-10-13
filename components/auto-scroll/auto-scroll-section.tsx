@@ -15,7 +15,7 @@ export default async function AutoScrollSection() {
           Zero to one is where I thrive and scaling is where I bring clarity.
         </h2>
         <p className="mt-4 text-base md:text-xl text-muted-foreground max-w-4xl">
-          Worked across projects with big outcomes that shipped fast and made a difference – from Android feature drops
+          Worked across projects with big outcomes that shipped fast and made a difference – from feature drops
           to global engagement tools and concept-to-MVP launches. No case studies needed, just thoughtful design that
           delivered.
         </p>

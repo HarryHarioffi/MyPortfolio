@@ -82,7 +82,7 @@ export function SiteHeader() {
             aria-label="View CV"
           >
             <a
-              href="https://drive.google.com/file/d/REPLACE_WITH_YOUR_ID/view"
+              href="https://drive.google.com/file/d/1SLq0OM38gf8waX0CyioEzj5d9sVdxgjT/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
