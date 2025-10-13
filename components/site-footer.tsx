@@ -83,7 +83,7 @@ export function SiteFooter() {
 
       {/* Bottom copyright bar */}
       <div className="mx-auto max-w-6xl px-4 pb-10 pt-6 text-center text-sm text-muted-foreground">
-        © {year} • Hariharasudhan S • Crafted with clarity • Build with V0 and Cursor
+        © {year} • Hariharasudhan S • Crafted with clarity • Built with V0 and Cursor
       </div>
     </footer>
   )

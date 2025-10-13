@@ -14,7 +14,7 @@ export default async function ProjectsShowcase({ className }: Props) {
   return (
     <section
       aria-labelledby="projects-title"
-      className={cn("relative mx-auto mt-20 sm:mt-82 w-full max-w-6xl px-6 md:px-8", className)}
+      className={cn("relative mx-auto mt-20 sm:mt-82 w-full max-w-6xl px-3 sm:px-6 md:px-8", className)}
     >
       <h2 id="projects-title" className="mb-12 text-left text-3xl font-semibold tracking-tight text-white md:text-4xl">
         My Works

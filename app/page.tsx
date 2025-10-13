@@ -15,7 +15,7 @@ const LINES = [
 
 export default function HomePage() {
   return (
-    <main className="relative mx-auto max-w-7xl px-6 pt-28 pb-24">
+    <main className="relative mx-auto max-w-7xl px-3 sm:px-6 pt-28 pb-24">
       <DotGridBackground />
       <section className="mt-20">
         <ScrollHighlightText

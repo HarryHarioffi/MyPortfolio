@@ -10,7 +10,7 @@ type Props = {
 
 export function ScrollHighlightText({ lines, className }: Props) {
   return (
-    <div className={cn("space-y-3 text-center -mt-12 sm:mt-44", className)}>
+    <div className={cn("space-y-3 text-center px-4 -mt-12 sm:mt-44", className)}>
       {lines.map((line, lineIndex) => {
         // Check if this line contains "I'm Hari"
         if (line.includes("I'm Hari")) {
