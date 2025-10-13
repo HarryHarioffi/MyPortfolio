@@ -20,7 +20,7 @@ export default function HomePage() {
       <section className="mt-20">
         <ScrollHighlightText
           lines={LINES}
-          className="text-pretty text-2xl leading-snug md:text-5xl md:leading-tight lg:text-6xl"
+          className="text-pretty text-sm sm:text-2xl leading-snug md:text-5xl md:leading-tight lg:text-6xl"
         />
       </section>
 
