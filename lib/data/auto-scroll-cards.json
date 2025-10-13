@@ -1,0 +1,44 @@
+[
+  {
+    "id": "gmail-people-card",
+    "src": "/images/projects/gmail-people-card.png",
+    "alt": "Gmail People Card",
+    "width": 360,
+    "height": 220
+  },
+  {
+    "id": "analytics-dashboard",
+    "src": "/placeholder.svg?height=220&width=360",
+    "alt": "Analytics dashboard",
+    "width": 360,
+    "height": 220
+  },
+  {
+    "id": "fintech-payments",
+    "src": "/placeholder.svg?height=220&width=360",
+    "alt": "Fintech payments",
+    "width": 360,
+    "height": 220
+  },
+  {
+    "id": "healthcare-portal",
+    "src": "/placeholder.svg?height=220&width=360",
+    "alt": "Healthcare portal",
+    "width": 360,
+    "height": 220
+  },
+  {
+    "id": "design-system",
+    "src": "/placeholder.svg?height=220&width=360",
+    "alt": "Design system",
+    "width": 360,
+    "height": 220
+  },
+  {
+    "id": "mobile-ios",
+    "src": "/placeholder.svg?height=220&width=360",
+    "alt": "Mobile iOS feature",
+    "width": 360,
+    "height": 220
+  }
+]

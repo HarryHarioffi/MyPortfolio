@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gmail-people-card",
+    "company": "Google",
+    "status": "Shipped",
+    "year": 2024,
+    "title": "Modernizing the Gmail's - People Card",
+    "description": "Led redesign of Workspace People Hover card used by millions, modernizing UX with rich, glanceable information and customization options. Improved user efficiency while establishing scalable patterns for consumer and enterprise needs.",
+    "image": "/images/projects/gmail-people-card.png",
+    "href": "#"
+  },
+  {
+    "id": "analytics-suite",
+    "company": "Acme Analytics",
+    "status": "Shipped",
+    "year": 2023,
+    "title": "Analytics Suite — Insights Dashboard",
+    "description": "Built a modular analytics dashboard with drill-down cards and live metrics. Elevated information density without sacrificing clarity, accelerating decision-making across teams.",
+    "image": "/images/projects/dashboard-analytics.jpg",
+    "href": "#"
+  },
+  {
+    "id": "fintech-payments",
+    "company": "FinPay",
+    "status": "Case Study",
+    "year": 2022,
+    "title": "Fintech Payments — Checkout Flow",
+    "description": "Redesigned checkout to support multi-currency and localized compliance. Reduced friction with progressive disclosure and contextual validation.",
+    "image": "/images/projects/fintech-payments.jpg",
+    "href": "#"
+  },
+  {
+    "id": "healthcare-portal",
+    "company": "WellCare",
+    "status": "Shipped",
+    "year": 2024,
+    "title": "Healthcare Portal — Patient Cards",
+    "description": "Introduced structured, glanceable patient cards enabling faster triage. Improved accessibility and consistency across complex workflows.",
+    "image": "/images/projects/healthcare-portal.jpg",
+    "href": "#"
+  }
+]

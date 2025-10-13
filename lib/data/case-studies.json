@@ -1,0 +1,77 @@
+[
+  {
+    "id": "gmail-people-card",
+    "title": "Modernizing the Gmail's – People Card",
+    "subtitle": "Google Workspace | People Card – Design System | Shipped 2024",
+    "coverImage": "/images/case-studies/gmail-people-card-hero.png",
+    "intro": "Redesigned People Hover card used by millions to align with modern guidelines. Improved information access, personalization, and scalability across consumer and enterprise contexts.",
+    "facts": {
+      "Product": "Web",
+      "Timeline": "Q1 2023 – Q4 2024",
+      "My Role": "UX/Visual Designer — strategy, future enhancements, personalization, and partner engagement",
+      "Skills": "Visual Design, Stakeholder Management, Interactive Prototyping",
+      "Impact": "Increased engagement, faster comprehension, scalable foundations"
+    },
+    "sections": [
+      {
+        "id": "overview",
+        "label": "Overview",
+        "heading": "Project overview",
+        "paragraphs": [
+          "Redesigned People Hover card to align with new guidelines, improving information access for both enterprise and consumer users while modernizing UX and expanding functionality.",
+          "This product spans complex data and workflows. A system-driven approach ensured consistency across surfaces while creating a foundation for continued development."
+        ]
+      },
+      {
+        "id": "introduction",
+        "label": "Introduction",
+        "heading": "Introduction",
+        "paragraphs": [
+          "The People Card is a frequent entry point for details and actions. Our objective was to harmonize clarity, density, and extensibility.",
+          "We audited current usage, mapped jobs-to-be-done, and prioritized experience principles."
+        ]
+      },
+      {
+        "id": "problems-goals",
+        "label": "Problems & Project Goals",
+        "heading": "Problems & project goals",
+        "paragraphs": [
+          "Legacy information hierarchy made scanning difficult. Actions lacked predictability across contexts.",
+          "Goals: improve glanceability, unify action patterns, and support future modules without breaking mental models."
+        ]
+      },
+      {
+        "id": "opportunity",
+        "label": "Opportunity",
+        "heading": "Opportunity",
+        "paragraphs": [
+          "Introduce scalable patterns that span consumer and enterprise needs while minimizing rework across product lines."
+        ]
+      },
+      {
+        "id": "final-designs",
+        "label": "Final designs",
+        "heading": "Final designs",
+        "paragraphs": [
+          "Refined layout, strong typographic rhythm, consistent iconography, and contextual actions. Patterns validated via prototype studies."
+        ]
+      },
+      {
+        "id": "outcomes-impact",
+        "label": "Outcomes & Impact",
+        "heading": "Outcomes & impact",
+        "paragraphs": [
+          "Increased engagement and task completion rate. Reduced time to action. Established a scalable design system baseline."
+        ]
+      },
+      {
+        "id": "takeaways",
+        "label": "Takeaways",
+        "heading": "Takeaways",
+        "paragraphs": [
+          "Balance density and clarity with composable patterns. System thinking accelerates iteration and downstream adoption."
+        ]
+      }
+    ]
+  }
+]
