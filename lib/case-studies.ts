@@ -6,6 +6,7 @@ export type CaseStudy = {
   title: string
   subtitle?: string
   coverImage?: string
+  images?: string[]
   intro?: string
   facts?: Record<string, string>
   sections: Array<{

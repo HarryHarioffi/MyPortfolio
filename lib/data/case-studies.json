@@ -4,6 +4,13 @@
     "title": "Modernizing the Gmail's – People Card",
     "subtitle": "Google Workspace | People Card – Design System | Shipped 2024",
     "coverImage": "/images/case-studies/gmail-people-card-hero.png",
+    "images": [
+      "/images/case-studies/gmail-people-card-hero.png",
+      "/images/projects/gmail-people-card.png",
+      "/images/projects/dashboard-analytics.jpg",
+      "/images/projects/fintech-payments.jpg",
+      "/images/projects/healthcare-portal.jpg"
+    ],
     "intro": "Redesigned People Hover card used by millions to align with modern guidelines. Improved information access, personalization, and scalability across consumer and enterprise contexts.",
     "facts": {
       "Product": "Web",

@@ -17,7 +17,13 @@ export default async function CaseStudyPage({ params }: Params) {
   return (
     <main className="relative">
       {/* Hero */}
-      <CaseStudyHero title={study.title} subtitle={study.subtitle} image={study.coverImage} className="pt-10" />
+      <CaseStudyHero 
+        title={study.title} 
+        subtitle={study.subtitle} 
+        image={study.coverImage}
+        images={study.images}
+        className="pt-10" 
+      />
 
       {/* Sidebar + Content */}
       <div className="mx-auto mt-12 mb-24 w-full max-w-6xl px-6 md:px-8">
