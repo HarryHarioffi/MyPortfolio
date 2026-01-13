@@ -40,7 +40,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="./favicon.ico" />
       </head>
       <body className={`font-sans ${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Suspense fallback={<div>Loading...</div>}>
             <SiteHeader />
             {children}
