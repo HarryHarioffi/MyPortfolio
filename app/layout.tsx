@@ -13,8 +13,8 @@ const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
-  title: "Hariharasudhan S | Product Designer",
-  description: "Portfolio of Hariharasudhan S, a curious Product Designer who loves learning through exploration",
+  title: "Hariharasudhan S | UX Designer",
+  description: "Portfolio of Hariharasudhan S, a curious UX Designer who loves learning through exploration",
   icons: {
     icon: [
       { url: "./icon.png" },
