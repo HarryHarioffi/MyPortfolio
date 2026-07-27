@@ -82,19 +82,19 @@ export function SiteHeader() {
             aria-label="View CV"
           >
             <a
-              href="https://drive.google.com/file/d/1SLq0OM38gf8waX0CyioEzj5d9sVdxgjT/view?usp=sharing"
+              href="https://drive.google.com/file/d/15-LFuwxHLARxGmZJLH0BD7RZOWDwJjxr/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
-              
+
               View CV
-              <svg 
-                className="h-3 w-3" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+              <svg
+                className="h-3 w-3"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
               >
                 <path d="M7 17L17 7M17 7H9M17 7v8" />

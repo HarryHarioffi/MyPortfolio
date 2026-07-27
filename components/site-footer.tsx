@@ -35,38 +35,38 @@ export function SiteFooter() {
                 className="group inline-flex items-center gap-3 rounded-full bg-muted/30 px-5 py-3 text-base text-foreground ring-1 ring-border/40 transition-colors hover:bg-muted/40"
               >
                 <span className="opacity-90">shariharasudhan2002@gmail.com</span>
-                <svg 
-                className="h-4 w-4" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="M7 17L17 7M17 7H9M17 7v8" />
-              </svg>
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 17L17 7M17 7H9M17 7v8" />
+                </svg>
                 <span className="sr-only">Send email</span>
               </Link>
 
               <Link
-                href="https://drive.google.com/file/d/1SLq0OM38gf8waX0CyioEzj5d9sVdxgjT/view?usp=sharing"
+                href="https://drive.google.com/file/d/15-LFuwxHLARxGmZJLH0BD7RZOWDwJjxr/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 rounded-full bg-muted/20 px-5 py-3 text-base text-foreground ring-1 ring-border/40 transition-colors hover:bg-muted/30"
               >
                 <span>Download CV</span>
-                <svg 
-                className="h-4 w-4" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="M7 17L17 7M17 7H9M17 7v8" />
-              </svg>
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 17L17 7M17 7H9M17 7v8" />
+                </svg>
               </Link>
             </div>
 
@@ -83,7 +83,7 @@ export function SiteFooter() {
 
       {/* Bottom copyright bar */}
       <div className="mx-auto max-w-6xl px-4 pb-10 pt-6 text-center text-sm text-muted-foreground">
-        © {year} • Hariharasudhan S • Crafted with clarity • Built with V0 and Cursor
+        © {year} • Hariharasudhan S • Crafted with clarity
       </div>
     </footer>
   )
