@@ -1,42 +1,50 @@
-import type { Metadata } from "next";
-import { Bricolage_Grotesque, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { site } from "@/content/site";
 import "./globals.css";
 
-const bricolageGrotesque = Bricolage_Grotesque({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "600", "800"],
+  variable: "--font-bricolage",
+  axes: ["opsz", "wdth"],
 });
 
-const interTight = Inter_Tight({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "700"],
+  variable: "--font-hanken",
 });
 
 export const metadata: Metadata = {
-  title: "Harry — UI/UX Designer · Enterprise SaaS · AI Platforms",
-  description:
-    "Portfolio of Hariharasudhan S — UI/UX designer specialising in enterprise SaaS, ERP systems, AI-native platforms, design systems and motion direction.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name}, ${site.role}`,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: `${site.name}, ${site.role}`,
+    description: site.description,
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: "#fcfdfd",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${bricolageGrotesque.variable} ${interTight.variable} ${jetbrainsMono.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="en" className={`${bricolage.variable} ${hanken.variable}`}>
+      <body className="flex min-h-dvh flex-col">
+        <SiteHeader />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }

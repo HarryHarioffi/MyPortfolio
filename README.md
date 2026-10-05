@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Harry Hari, portfolio (V2)
 
-## Getting Started
-
-First, run the development server:
+Design engineer portfolio. Next.js 16 (App Router), React 19, Tailwind v4, TypeScript. No animation library: motion is CSS only.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # http://localhost:3000
+npm run build   # every page is prerendered to static HTML
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | What |
+|---|---|
+| `app/globals.css` | **Design tokens** (colors, type scale, easing), taken from the Figma "Case Study v2" template. Change a value here and the whole site follows. |
+| `content/site.ts` | Name, role, email, links, nav. |
+| `content/case-studies/*.ts` | One typed file per case study. Structure follows the Figma template. |
+| `content/index.ts` | Order of case studies on the home page and in "Next case study". |
+| `components/home/*` | Home page sections. |
+| `components/case-study/*` | Case study page, one function per template section. |
+| `components/ui/MediaSlot.tsx` | Renders your image or video, or the dashed placeholder if none yet. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Add a case study
 
-## Learn More
+1. Copy `content/case-studies/strata-ai.ts`, rename, fill it in.
+2. Add it to the array in `content/index.ts`.
 
-To learn more about Next.js, take a look at the following resources:
+The route `/work/<slug>`, the sticky section index, the sitemap and the metadata are generated from the data. Optional sections (`discovery`, `options`, `decisions`, `solution.annotated`, `solution.flow`, `outcome.quote`) disappear cleanly when omitted.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Add real media
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Drop files in `public/work/<project>/` and set `src`, `width` and `height` on the media entry:
 
-## Deploy on Vercel
+```ts
+cover: { src: "/work/strata/cover.webp", width: 2400, height: 1240, alt: "StrataAI workspace builder" }
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Images go through `next/image` (AVIF/WebP, responsive sizes, no layout shift). Set `video: true` for mp4/webm flow recordings.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Before launch
+
+- Replace every `[bracketed]` placeholder in `content/` (metrics, quotes, dates, team).
+- Set `NEXT_PUBLIC_SITE_URL`, and the LinkedIn and GitHub links in `content/site.ts`.
+- Add `public/resume.pdf`.

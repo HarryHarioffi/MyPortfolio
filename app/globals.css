@@ -1,144 +1,149 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --bone: #fff8ec;
-    --ink: #0e0e10;
-    --peach: #ffb38a;
-
-    --room-echo: #0b1f3a;
-    --room-echo-accent: #19f0a6;
-
-    --room-strata: #5b3df5;
-    --room-strata-accent: #ffe14a;
-
-    --room-heimdall: #0a0a0c;
-    --room-heimdall-accent: #ff2d55;
-
-    --room-erp: #ff7a3d;
-    --room-erp-accent: #fff8ec;
-
-    --room-cloud: #ffd84d;
-    --room-cloud-accent: #0e0e10;
-
-    --room-dash: #4d6dff;
-    --room-dash-accent: #fff8ec;
-
-    --room-sage: #19d27d;
-    --room-pink: #ff3b8a;
-
-    /* Explicitly map variables to Tailwind color classes to bypass utility optimization pruning */
-    --color-bone: var(--bone);
-    --color-ink: var(--ink);
-    --color-peach: var(--peach);
-
-    --color-room-echo: var(--room-echo);
-    --color-room-echo-accent: var(--room-echo-accent);
-
-    --color-room-strata: var(--room-strata);
-    --color-room-strata-accent: var(--room-strata-accent);
-
-    --color-room-heimdall: var(--room-heimdall);
-    --color-room-heimdall-accent: var(--room-heimdall-accent);
-
-    --color-room-erp: var(--room-erp);
-    --color-room-erp-accent: var(--room-erp-accent);
-
-    --color-room-cloud: var(--room-cloud);
-    --color-room-cloud-accent: var(--room-cloud-accent);
-
-    --color-room-dash: var(--room-dash);
-    --color-room-dash-accent: var(--room-dash-accent);
-
-    --color-room-sage: var(--room-sage);
-    --color-room-pink: var(--room-pink);
-  }
-}
-
+/*
+ * Design tokens, extracted from the "Case Study v2" Figma template.
+ * Semantic names only: change a value here and the whole site follows.
+ * Neutrals are tinted toward the teal accent (hue ~215-200), never pure grey.
+ */
 @theme {
-  --font-display: var(--font-display), sans-serif;
-  --font-body: var(--font-body), sans-serif;
-  --font-mono: var(--font-mono), monospace;
+  --color-paper: #fcfdfd;
+  --color-ink: #2a3035;
+  --color-body: #4a545c;
+  --color-muted: #667078;
+  --color-faint: #899096;
+  --color-line: #dbe0e3;
+  --color-slot: #e9eef0;
+  --color-slot-line: #b8c2c7;
+  --color-chip: #e3e7e9;
+  --color-accent: #386e75;
+  --color-accent-soft: #ddebea;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+
+  --text-hero: 76px;
+  --text-hero--line-height: 82px;
+  --text-hero--letter-spacing: -1.9px;
+  --text-h2: 40px;
+  --text-h2--line-height: 48px;
+  --text-h2--letter-spacing: -0.6px;
+  --text-h3: 26px;
+  --text-h3--line-height: 34px;
+  --text-h3--letter-spacing: -0.13px;
+  --text-h4: 24px;
+  --text-h4--line-height: 30px;
+  --text-h4--letter-spacing: -0.12px;
+  --text-lede: 22px;
+  --text-lede--line-height: 32px;
+  --text-copy: 17px;
+  --text-copy--line-height: 26px;
+  --text-copy-lg: 18px;
+  --text-copy-lg--line-height: 29px;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-  html, body {
-    position: relative;
-    background-color: var(--color-bone);
-    color: var(--color-ink);
-    font-family: var(--font-body);
+  html {
+    background: var(--color-paper);
+    color: var(--color-body);
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    scroll-behavior: auto; /* Disabled for GSAP/Motion smooth scrolling */
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 96px;
   }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
-  ::-webkit-scrollbar-track {
-    background: var(--color-bone);
+  body {
+    min-height: 100dvh;
   }
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-ink);
-    opacity: 0.3;
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
     border-radius: 3px;
   }
 }
 
-/* Mesh gradient + grain for hero */
-@utility hero-mesh {
-  background:
-    radial-gradient(55% 75% at 12% 18%, #ffd84d 0%, transparent 60%),
-    radial-gradient(55% 70% at 88% 28%, #ff3b8a 0%, transparent 62%),
-    radial-gradient(60% 80% at 50% 100%, #19d27d 0%, transparent 65%),
-    radial-gradient(45% 60% at 80% 80%, #4d6dff 0%, transparent 60%),
-    linear-gradient(180deg, #fff8ec 0%, #ffe7c2 100%);
-  background-size: 220% 220%;
-  animation: mesh-drift 18s ease-in-out infinite alternate;
-}
+@layer components {
+  /* Display type: Bricolage's optical size axis lowers contrast at big sizes. */
+  .display {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 14, "wdth" 100;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+  .prose-copy {
+    text-wrap: pretty;
+    max-width: 68ch;
+  }
 
-@keyframes mesh-drift {
-  0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
-  100% { background-position: 30% 20%, 70% 30%, 60% 80%, 0 0; }
-}
+  /* Placeholder for media that has not been dropped in yet. Matches the Figma slot. */
+  .media-slot {
+    background: var(--color-slot);
+    border: 1px dashed var(--color-slot-line);
+    border-radius: 6px;
+  }
 
-@utility grain {
-  position: relative;
-  isolation: isolate;
-}
-@utility grain {
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.18;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    z-index: 1;
+  /* Underline that draws in from the left on hover. */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1px;
+    transition: background-size 0.35s var(--ease-out-quart);
+  }
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 1px;
   }
 }
 
-@utility marquee-track {
-  animation: marquee 40s linear infinite;
+/*
+ * Scroll reveal, CSS only. Elements fade and rise as they enter the viewport.
+ * Browsers without scroll-driven animations simply show the content.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
 }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-@utility no-scrollbar {
-  scrollbar-width: none;
-  &::-webkit-scrollbar { display: none; }
+/* Page-load stagger for the hero. Pure CSS, no JS. */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise-in 0.8s var(--ease-out-expo) both;
+    animation-delay: calc(var(--i, 0) * 70ms);
+  }
 }
-
-.gpu-accelerated {
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }

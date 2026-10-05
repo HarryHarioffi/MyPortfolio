@@ -1,19 +1,15 @@
-import { Nav } from "@/components/portfolio/Nav";
-import { Hero } from "@/components/portfolio/Hero";
-import { WorkReel } from "@/components/portfolio/WorkReel";
-import { About, Process, Extras, Contact } from "@/components/portfolio/Sections";
+import { About } from "@/components/home/About";
+import { Contact } from "@/components/home/Contact";
+import { Hero } from "@/components/home/Hero";
+import { WorkList } from "@/components/home/WorkList";
 
 export default function Home() {
   return (
-    <main className="bg-bone text-ink min-h-screen">
-      <Nav />
+    <>
       <Hero />
-      <WorkReel />
+      <WorkList />
       <About />
-      <Process />
-      <Extras />
       <Contact />
-    </main>
+    </>
   );
 }
-
