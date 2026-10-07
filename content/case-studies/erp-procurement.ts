@@ -7,8 +7,9 @@ export const erpProcurement: CaseStudy = {
   year: 2025,
   status: "Shipped",
   card: {
-    tagline: "Three ERP modules that finally feel like one product.",
-    shape: "wide",
+    tagline: "Three ERP modules that behaved like three products. I put them on one component system, dense by default.",
+    domain: "Manufacturing ERP",
+    contribution: "Product design + shared components",
   },
   overview: {
     hook: "Each ERP module was designed alone, so power users paid for it on every click",

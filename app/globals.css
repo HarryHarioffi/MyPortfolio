@@ -17,6 +17,10 @@
   --color-chip: #e3e7e9;
   --color-accent: #386e75;
   --color-accent-soft: #ddebea;
+  /* A second, slightly deeper surface: tool windows, cover art, hover tints. */
+  --color-canvas: #f3f6f6;
+  /* Heimdall's covers use color for severity only, as the product did. */
+  --color-severity: #c2410c;
 
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
@@ -103,6 +107,115 @@
   .link-draw:hover,
   .link-draw:focus-visible {
     background-size: 100% 1px;
+  }
+
+  /* A link that is always visibly a link (touch screens have no hover), and darkens on hover. */
+  .link-quiet {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+    transition: text-decoration-color 0.2s var(--ease-out-quart);
+  }
+  .link-quiet:hover,
+  .link-quiet:focus-visible {
+    text-decoration-color: currentColor;
+  }
+
+  /* Figma-style canvas: a faint dot grid. */
+  .dot-grid {
+    background-color: var(--color-canvas);
+    background-image: radial-gradient(rgb(42 48 53 / 0.13) 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-position: -8px -8px;
+  }
+  .dot-grid-ink {
+    background-color: var(--color-ink);
+    background-image: radial-gradient(rgb(252 253 253 / 0.09) 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-position: -8px -8px;
+  }
+}
+
+/* The footer heart, on hover: a heartbeat (two quick beats, then a rest). */
+@keyframes heart-beat {
+  0%,
+  40%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.22);
+  }
+  28% {
+    transform: scale(1.1);
+  }
+}
+
+/* Availability dot: one slow pulse, the only moving accent above the fold. */
+@media (prefers-reduced-motion: no-preference) {
+  .pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: currentColor;
+    animation: pulse-ring 2.4s var(--ease-out-quart) infinite;
+  }
+}
+@keyframes pulse-ring {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/*
+ * Name swap on /about. Each letter carries --i (its index) and --n (letters in its word),
+ * so letters leave right to left and arrive left to right, like backspacing and retyping.
+ */
+.name-letter {
+  display: inline-block;
+  white-space: pre;
+  transition:
+    opacity 160ms var(--ease-out-quart),
+    transform 160ms var(--ease-out-quart);
+}
+[data-shown="false"] .name-letter {
+  opacity: 0;
+  transform: translateY(-0.06em);
+  transition-delay: calc((var(--n) - 1 - var(--i)) * 10ms);
+}
+[data-shown="true"] .name-letter {
+  opacity: 1;
+  transform: none;
+  transition-duration: 220ms;
+  transition-delay: calc(140ms + var(--i) * 16ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .name-letter {
+    transition: none !important;
+  }
+}
+/* A caret that blinks twice after each swap, then rests. */
+@media (prefers-reduced-motion: no-preference) {
+  .name-caret {
+    animation: caret-blink 0.5s steps(1) 0.55s 3 both;
+  }
+}
+@keyframes caret-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

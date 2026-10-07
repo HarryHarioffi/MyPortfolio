@@ -7,8 +7,10 @@ export const heimdall: CaseStudy = {
   year: 2025,
   status: "Enterprise",
   card: {
-    tagline: "Rethinking how a threat intelligence tool speaks when every second counts.",
-    shape: "square",
+    tagline: "Analysts get minutes per alert. I put what needs a human first and always showed how sure the agent was.",
+    domain: "Threat intelligence, run by AI agents",
+    contribution: "UX architecture + dashboard",
+    team: "1 PM, a security SME, engineers, me",
   },
   overview: {
     hook: "In security tooling, visual noise is not a style problem, it is a safety problem",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getNextCaseStudy, getSections } from "@/content";
 import type { CaseStudy } from "@/content/types";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { CoverArt } from "@/components/ui/CoverArt";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 import { SectionIndex } from "./SectionIndex";
 import { Block, Copy, Lead, Row } from "./parts";
@@ -31,7 +32,12 @@ function Overview({ c }: { c: CaseStudy }) {
       <p className="max-w-[720px] text-lede text-body">{o.summary}</p>
       {o.nda && <p className="text-[14px] text-muted">{o.nda}</p>}
 
-      <MediaSlot media={o.cover} ratio="1200 / 620" priority />
+      <MediaSlot
+        media={o.cover}
+        ratio="1200 / 620"
+        priority
+        art={<CoverArt slug={c.slug} title={c.title} domain={c.card.domain} />}
+      />
 
       <div className="flex flex-col gap-6 border-t border-line py-7 font-medium">
         <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">

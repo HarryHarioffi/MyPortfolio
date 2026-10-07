@@ -8,11 +8,14 @@ import type { CaseStudy, SectionId } from "./types";
 /** Order here is the order on the home page and the "next case study" chain. */
 export const caseStudies: CaseStudy[] = [
   strataAi,
-  echoDesk,
   heimdall,
+  echoDesk,
   erpProcurement,
   theCloudCompany,
 ];
+
+/** The first three get large cards; the rest are compact "More work" rows. */
+export const FEATURED_COUNT = 3;
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return caseStudies.find((c) => c.slug === slug);

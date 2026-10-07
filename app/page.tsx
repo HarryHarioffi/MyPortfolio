@@ -1,6 +1,6 @@
-import { About } from "@/components/home/About";
-import { Contact } from "@/components/home/Contact";
+import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { Hero } from "@/components/home/Hero";
+import { HowIWork } from "@/components/home/HowIWork";
 import { WorkList } from "@/components/home/WorkList";
 
 export default function Home() {
@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <Hero />
       <WorkList />
-      <About />
-      <Contact />
+      <HowIWork />
+      <AboutTeaser />
     </>
   );
 }

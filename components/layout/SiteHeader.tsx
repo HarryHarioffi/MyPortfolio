@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { NavLink } from "./NavLink";
 
 export function SiteHeader() {
   return (
@@ -10,22 +11,20 @@ export function SiteHeader() {
       >
         <Link href="/" className="flex items-baseline gap-3 text-base uppercase">
           <span className="text-ink">{site.name}</span>
-          <span className="hidden text-faint sm:inline">{site.role}</span>
+          <span className="hidden text-muted sm:inline">{site.role}</span>
         </Link>
         <ul className="flex items-center gap-7 text-muted">
           {site.nav.map((item) => (
             <li key={item.label}>
-              {"external" in item ? (
-                <a href={item.href} className="transition-colors hover:text-ink">
-                  {item.label}
-                </a>
-              ) : (
-                <Link href={item.href} className="transition-colors hover:text-ink">
-                  {item.label}
-                </Link>
-              )}
+              <NavLink href={item.href}>{item.label}</NavLink>
             </li>
           ))}
+          {/* Always shown. Add public/Hariharasudhan-S-Resume.pdf so it doesn't 404. */}
+          <li>
+            <a href={site.links.resume} target="_blank" rel="noopener" className="transition-colors hover:text-ink">
+              Resume
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

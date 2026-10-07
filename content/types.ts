@@ -29,11 +29,16 @@ export type CaseStudy = {
   year: number;
   status: string;
 
-  /** Card on the home page. */
+  /** Card on the home page. Featured cards show all of it; "More work" rows show the tagline. */
   card: {
+    /** The problem and what I did, under 110 characters. */
     tagline: string;
-    /** Shape of the cover on the home grid, so the grid has rhythm. */
-    shape: "wide" | "tall" | "square";
+    /** What kind of product this is, in words an outsider understands. */
+    domain: string;
+    /** What I did on it, e.g. "Product design + React prototype". */
+    contribution: string;
+    /** Who I worked with, ending in "me". Leave out anything unconfirmed. */
+    team?: string;
   };
 
   overview: {

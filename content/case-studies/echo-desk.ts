@@ -7,8 +7,10 @@ export const echoDesk: CaseStudy = {
   year: 2025,
   status: "Shipped",
   card: {
-    tagline: "A side panel that brings AI request details to the task, so nobody has to leave it.",
-    shape: "tall",
+    tagline: "A side panel that keeps each AI request next to the review queue. Verdict first, evidence a click away.",
+    domain: "AI management platform",
+    contribution: "Product design + reusable panel shell",
+    team: "1 PM, 2 engineers, me",
   },
   overview: {
     hook: "Reviewers left their task to look up each AI request, so we brought the request to them",

@@ -7,8 +7,10 @@ export const theCloudCompany: CaseStudy = {
   year: 2025,
   status: "Shipped",
   card: {
-    tagline: "A scroll-driven 3D landing where every animation carries the story.",
-    shape: "tall",
+    tagline: "Our company website. I designed it, prototyped how the 3D hero plays as you scroll, and wrote the motion spec.",
+    domain: "Marketing site + design system",
+    contribution: "Design, motion spec, scroll prototype",
+    team: "1 PM, 1 engineer, me",
   },
   overview: {
     hook: "A website that shows an AI-native company instead of explaining one",

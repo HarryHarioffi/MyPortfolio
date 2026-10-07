@@ -7,8 +7,10 @@ export const strataAi: CaseStudy = {
   year: 2025,
   status: "Shipped",
   card: {
-    tagline: "Giving teams control over what an AI agent knows and who can reach it.",
-    shape: "wide",
+    tagline: "What did this agent know, and who could see it? I made both readable at a glance.",
+    domain: "AI collaboration platform",
+    contribution: "Product design + React prototype",
+    team: "1 PM, 3 engineers, me",
   },
   overview: {
     hook: "Teams shared one AI workspace, so nobody could say what an agent knew or who could see it",
@@ -112,10 +114,10 @@ export const strataAi: CaseStudy = {
       { metric: "[XX%] faster agent setup", how: "Median time to a working scoped agent in usability tests, n=[N]." },
       { metric: "[N] teams onboarded in the first quarter", how: "Account activity from the admin dashboard." },
     ],
+    // If a number can't be backed up, use the quote and say what you observed instead.
     quote: {
       text: "[A line from the PM or an admin about what changed for them.]",
       by: "[Name, role]",
-      note: "If a number can't be backed up, use the quote and say what you observed instead.",
     },
   },
   reflection: {
