@@ -23,7 +23,7 @@ export function MediaSlot({ media, ratio, className = "", sizes = "(min-width: 1
 
   if (!media.src && art) {
     return (
-      <div className={`relative overflow-hidden rounded-[6px] ${fill} ${className}`} style={style}>
+      <div className={`relative overflow-hidden ${fill} ${className}`} style={style}>
         {art}
       </div>
     );
@@ -43,7 +43,7 @@ export function MediaSlot({ media, ratio, className = "", sizes = "(min-width: 1
   }
 
   return (
-    <div className={`relative overflow-hidden rounded-[6px] bg-slot ${fill} ${className}`} style={style}>
+    <div className={`relative overflow-hidden bg-slot ${fill} ${className}`} style={style}>
       {media.video ? (
         <video
           className="absolute inset-0 size-full object-cover"

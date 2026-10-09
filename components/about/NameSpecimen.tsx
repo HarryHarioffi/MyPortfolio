@@ -58,14 +58,14 @@ export function NameSpecimen({ legal, stage, eyebrow }: { legal: string; stage: 
         <p className="text-base font-medium text-accent" aria-hidden="true">
           {eyebrow}
         </p>
-        <div role="group" aria-label="Which name" className="flex rounded-md bg-chip p-0.5 text-[14px] font-medium text-muted">
+        <div role="group" aria-label="Which name" className="flex bg-chip p-0.5 text-[14px] font-medium text-muted">
           {(["legal", "stage"] as const).map((v) => (
             <button
               key={v}
               type="button"
               onClick={() => choose(v)}
               aria-pressed={view === v}
-              className={`h-8 rounded-[5px] px-3 capitalize transition-colors duration-150 ${
+              className={`h-8 px-3 capitalize transition-colors duration-150 ${
                 view === v ? "bg-paper text-ink shadow-[0_1px_2px_rgb(42_48_53/0.12)]" : "hover:text-ink"
               }`}
             >

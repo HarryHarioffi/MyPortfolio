@@ -45,8 +45,8 @@ export function WorkList() {
       <div className="flex flex-col gap-16 lg:gap-24">
         {/* Lead project: text left, cover right, echoing the hero. */}
         <article className="reveal">
-          <Link href={`/work/${lead.slug}`} className="group grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-10">
-            <div className="overflow-hidden rounded-[6px] lg:col-span-8 lg:col-start-5 lg:row-start-1">
+          <Link href={`/work/${lead.slug}`} data-cursor="Open case study" data-cursor-icon="eye" className="group grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-10">
+            <div className="overflow-hidden lg:col-span-8 lg:col-start-5 lg:row-start-1">
               <MediaSlot
                 media={lead.overview.cover}
                 art={<CoverArt slug={lead.slug} title={lead.title} domain={lead.card.domain} />}
@@ -71,8 +71,8 @@ export function WorkList() {
                 i === 0 ? "md:col-span-7 lg:col-span-8" : "md:col-span-5 lg:col-span-4"
               }`}
             >
-              <Link href={`/work/${study.slug}`} className="group contents">
-                <div className="overflow-hidden rounded-[6px]">
+              <Link href={`/work/${study.slug}`} data-cursor="Open case study" data-cursor-icon="eye" className="group contents">
+                <div className="overflow-hidden">
                   <MediaSlot
                     media={study.overview.cover}
                     art={<CoverArt slug={study.slug} title={study.title} domain={study.card.domain} />}
@@ -99,6 +99,7 @@ export function WorkList() {
                 <li key={study.slug}>
                   <Link
                     href={`/work/${study.slug}`}
+                    data-cursor="Open case study" data-cursor-icon="eye"
                     className="group grid items-baseline gap-x-10 gap-y-1 border-b border-line py-6 md:grid-cols-12"
                   >
                     <span className="display text-[24px] leading-[30px] tracking-[-0.12px] transition-colors group-hover:text-accent md:col-span-4">

@@ -86,7 +86,7 @@ export default function AboutPage() {
                   { label: "StrataAI", href: "/work/strata-ai" },
                   { label: "ERP Procurement", href: "/work/erp-procurement" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="group inline-flex items-center gap-2 text-ink">
+                  <Link key={l.href} href={l.href} data-cursor="Open case study" data-cursor-icon="eye" className="group inline-flex items-center gap-2 text-ink">
                     <span className="link-quiet">{l.label}</span>
                     <ArrowIcon className="transition-transform duration-300 ease-out-quart group-hover:translate-x-1" />
                   </Link>
@@ -143,12 +143,12 @@ export default function AboutPage() {
                 {offTheClock.interests.map((t) => (
                   <li
                     key={t}
-                    className="display rounded-full border border-line bg-paper px-5 py-2 text-[clamp(20px,2.2vw,26px)] font-medium tracking-[-0.12px] transition-[transform,background-color] duration-200 ease-out-quart hover:-rotate-2 hover:bg-accent-soft"
+                    className="display border border-line bg-paper px-5 py-2 text-[clamp(20px,2.2vw,26px)] font-medium tracking-[-0.12px] transition-[transform,background-color] duration-200 ease-out-quart hover:-rotate-2 hover:bg-accent-soft"
                   >
                     {t}
                   </li>
                 ))}
-                <li className="display rounded-full border border-dashed border-accent px-5 py-2 text-[clamp(20px,2.2vw,26px)] font-medium tracking-[-0.12px] text-accent">
+                <li className="display border border-dashed border-accent px-5 py-2 text-[clamp(20px,2.2vw,26px)] font-medium tracking-[-0.12px] text-accent">
                   Harry Potter, obviously
                 </li>
               </ul>

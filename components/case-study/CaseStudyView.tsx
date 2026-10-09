@@ -131,7 +131,7 @@ function Options({ c }: { c: CaseStudy }) {
                     Option {String.fromCharCode(65 + i)}: {opt.name}
                   </h3>
                   <span
-                    className={`rounded-[4px] px-2.5 py-1 text-[13px] font-medium ${
+                    className={`px-2.5 py-1 text-[13px] font-medium ${
                       chosen ? "bg-accent-soft text-accent" : "bg-chip text-muted"
                     }`}
                   >
@@ -188,7 +188,7 @@ function Solution({ c }: { c: CaseStudy }) {
           <ol className="flex flex-col gap-7">
             {s.annotated.notes.map((note, i) => (
               <li key={note} className="flex gap-3.5 text-copy text-body">
-                <span className="mt-px flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-[13px] font-semibold text-paper">
+                <span className="mt-px flex size-6 shrink-0 items-center justify-center bg-accent text-[13px] font-semibold text-paper">
                   {i + 1}
                 </span>
                 <span>{note}</span>
@@ -271,6 +271,7 @@ function Next({ c }: { c: CaseStudy }) {
   return (
     <Link
       href={`/work/${next.slug}`}
+      data-cursor="Open case study" data-cursor-icon="eye"
       className="group flex items-end justify-between gap-6 border-t border-line pt-10"
     >
       <div>

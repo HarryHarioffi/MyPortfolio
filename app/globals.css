@@ -21,6 +21,8 @@
   --color-canvas: #f3f6f6;
   /* Heimdall's covers use color for severity only, as the product did. */
   --color-severity: #c2410c;
+  /* paper minus accent: under mix-blend-mode difference, this reads as the accent on paper. */
+  --color-cursor-invert: #c48f88;
 
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
@@ -65,6 +67,12 @@
   body {
     min-height: 100dvh;
   }
+  /* Sharp edges only, everywhere. */
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
+  }
   ::selection {
     background: var(--color-accent-soft);
     color: var(--color-ink);
@@ -72,7 +80,6 @@
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
-    border-radius: 3px;
   }
 }
 
@@ -93,7 +100,6 @@
   .media-slot {
     background: var(--color-slot);
     border: 1px dashed var(--color-slot-line);
-    border-radius: 6px;
   }
 
   /* Underline that draws in from the left on hover. */
@@ -158,7 +164,6 @@
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 9999px;
     background: currentColor;
     animation: pulse-ring 2.4s var(--ease-out-quart) infinite;
   }
@@ -259,4 +264,92 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/*
+ * The custom cursor (components/layout/Cursor.tsx). Only mounted for a fine pointer,
+ * which adds .has-cursor to <html> and hides the native one.
+ */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+.site-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  /* No color transition: the blend mode flips instantly, so a fading color would flash brown. */
+  transition: opacity 0.2s var(--ease-out-quart);
+  will-change: transform, width, height;
+}
+/* Over clickables: two square waves ripple out and fade, offset by half a beat. */
+.site-cursor::before,
+.site-cursor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .site-cursor[data-mode="pointer"]::before,
+  .site-cursor[data-mode="pointer"]::after {
+    animation: cursor-wave 2s var(--ease-out-quart) infinite;
+  }
+  .site-cursor[data-mode="pointer"]::after {
+    animation-delay: 1s;
+  }
+}
+@keyframes cursor-wave {
+  from {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.site-cursor[data-mode="text"],
+.site-cursor[data-mode="pointer"] {
+  background: var(--color-cursor-invert);
+  mix-blend-mode: difference;
+}
+.site-cursor[data-mode="pointer"]::before,
+.site-cursor[data-mode="pointer"]::after {
+  border-color: var(--color-cursor-invert);
+}
+.site-cursor-label {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-paper);
+  opacity: 0;
+  transition: opacity 0.15s var(--ease-out-quart);
+}
+.site-cursor-icon {
+  display: none;
+  flex: none;
+}
+.site-cursor[data-icon="eye"] .site-cursor-icon[data-for="eye"],
+.site-cursor[data-icon="copy"] .site-cursor-icon[data-for="copy"],
+.site-cursor[data-icon="check"] .site-cursor-icon[data-for="check"] {
+  display: block;
+}
+.site-cursor[data-mode="label"] .site-cursor-label {
+  opacity: 1;
+  transition-delay: 0.08s;
 }

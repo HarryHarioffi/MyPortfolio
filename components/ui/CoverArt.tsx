@@ -11,7 +11,7 @@ const label = "fill-muted text-[12px] font-medium";
 function Badge({ dark = false }: { dark?: boolean }) {
   return (
     <span
-      className={`absolute bottom-3 left-3 rounded-[4px] px-2 py-0.5 text-[11px] font-medium ${
+      className={`absolute bottom-3 left-3 px-2 py-0.5 text-[11px] font-medium ${
         dark ? "bg-[rgb(252_253_253/0.08)] text-[#aab4ba]" : "bg-paper/80 text-muted"
       }`}
     >

@@ -39,7 +39,7 @@ export function LocalStatus({ timeZone, place }: { timeZone: string; place: stri
     <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px] text-muted">
       <span
         aria-hidden="true"
-        className={`relative size-2 rounded-full ${m?.awake === false ? "bg-faint" : "pulse-dot bg-accent text-accent"}`}
+        className={`relative size-2 ${m?.awake === false ? "bg-faint" : "pulse-dot bg-accent text-accent"}`}
       />
       <span className="font-medium tabular-nums text-ink">{now?.mine ?? "--:--"}</span>
       <span>in {place}</span>

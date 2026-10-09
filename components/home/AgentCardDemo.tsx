@@ -47,11 +47,12 @@ function codeLines(level: Level): Token[][] {
   ];
 }
 
+/** A light theme from the site palette; strings get the one warm hue so values stand out. */
 const tokenColor = {
-  tag: "text-[#9fd3d0]",
-  prop: "text-[#c9dfe0]",
-  str: "text-paper",
-  punct: "text-[#8c979e]",
+  tag: "text-accent",
+  prop: "text-ink",
+  str: "text-[#9a4a12]",
+  punct: "text-muted",
 } as const;
 
 export function AgentCardDemo() {
@@ -83,7 +84,7 @@ export function AgentCardDemo() {
       aria-selected={view === v}
       aria-controls={`${id}-panel-${v}`}
       onClick={() => setView(v)}
-      className={`h-8 rounded-[5px] px-3 capitalize transition-colors duration-150 ${
+      className={`h-8 px-3 capitalize transition-colors duration-150 ${
         view === v ? "bg-paper text-ink shadow-[0_1px_2px_rgb(42_48_53/0.12)]" : "text-muted hover:text-ink"
       }`}
     >
@@ -93,13 +94,13 @@ export function AgentCardDemo() {
 
   return (
     <figure className="w-full">
-      <div className="overflow-hidden rounded-xl border border-line bg-paper">
+      <div className="overflow-hidden border border-line bg-paper">
         <div className="flex h-12 items-center justify-between border-b border-line pl-4 pr-1.5">
           <span className="flex items-center gap-2 font-mono text-[12px] text-muted">
-            <span className="size-2 rounded-[2px] bg-accent" aria-hidden="true" />
+            <span className="size-2 bg-accent" aria-hidden="true" />
             AgentCard.tsx
           </span>
-          <div role="tablist" aria-label="View" className="flex rounded-md bg-chip p-0.5 text-[13px] font-medium">
+          <div role="tablist" aria-label="View" className="flex bg-chip p-0.5 text-[13px] font-medium">
             {tab("design")}
             {tab("code")}
           </div>
@@ -118,10 +119,10 @@ export function AgentCardDemo() {
             <SelectionFrame label={size ? `AgentCard · ${size.w} × ${size.h}` : "AgentCard"}>
               <div
                 ref={cardRef}
-                className="w-[272px] max-w-full rounded-[10px] border border-line bg-paper p-5 text-left shadow-[0_1px_2px_rgb(42_48_53/0.06)]"
+                className="w-[272px] max-w-full border border-line bg-paper p-5 text-left shadow-[0_1px_2px_rgb(42_48_53/0.06)]"
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-accent-soft text-accent" aria-hidden="true">
+                  <span className="flex size-8 shrink-0 items-center justify-center bg-accent-soft text-accent" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path d="M8 1.5l1.6 4.2 4.2 1.6-4.2 1.6L8 13.1 6.4 8.9 2.2 7.3l4.2-1.6L8 1.5z" fill="currentColor" />
                     </svg>
@@ -136,7 +137,7 @@ export function AgentCardDemo() {
                     <dt className="text-muted">Sources</dt>
                     <dd className="flex gap-1.5">
                       {agent.sources.map((s) => (
-                        <span key={s} className="rounded-[4px] bg-chip px-1.5 py-0.5 text-body">
+                        <span key={s} className="bg-chip px-1.5 py-0.5 text-body">
                           {s}
                         </span>
                       ))}
@@ -149,7 +150,7 @@ export function AgentCardDemo() {
                       <button
                         onClick={nextLevel}
                         aria-label={`Access level: can ${level}. Change it`}
-                        className="inline-flex h-7 items-center gap-1 rounded-[5px] bg-accent-soft px-2 font-medium text-accent transition-transform duration-150 ease-out-quart active:scale-[0.96]"
+                        className="inline-flex h-7 items-center gap-1 bg-accent-soft px-2 font-medium text-accent transition-transform duration-150 ease-out-quart active:scale-[0.96]"
                       >
                         Can {level}
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
@@ -168,7 +169,7 @@ export function AgentCardDemo() {
             id={`${id}-panel-code`}
             aria-labelledby={`${id}-tab-code`}
             inert={view !== "code"}
-            className={`flex min-h-[300px] items-center bg-ink py-6 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-out-quart ${
+            className={`flex min-h-[300px] items-center bg-canvas py-6 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-out-quart ${
               view === "code" ? "opacity-100" : "-translate-y-1 opacity-0"
             }`}
           >
@@ -177,9 +178,9 @@ export function AgentCardDemo() {
                 {lines.map((line, i) => (
                   <span
                     key={i}
-                    className={`flex pr-5 ${i === lines.length - 2 ? "bg-[rgb(159_211_208/0.12)]" : ""}`}
+                    className={`flex pr-5 ${i === lines.length - 2 ? "bg-accent-soft" : ""}`}
                   >
-                    <span className="w-10 shrink-0 select-none pr-4 text-right text-[#5d6a72]" aria-hidden="true">
+                    <span className="w-10 shrink-0 select-none pr-4 text-right text-faint" aria-hidden="true">
                       {i + 1}
                     </span>
                     <span className="whitespace-pre">

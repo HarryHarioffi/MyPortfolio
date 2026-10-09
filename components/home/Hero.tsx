@@ -18,7 +18,7 @@ export function Hero() {
       <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,500px)] lg:items-center lg:gap-16">
         <div>
           <p className="rise flex items-center gap-2.5 text-base font-medium text-accent" style={stagger(0)}>
-            <span className="pulse-dot relative size-2 rounded-full bg-accent text-accent" aria-hidden="true" />
+            <span className="pulse-dot relative size-2 bg-accent text-accent" aria-hidden="true" />
             {hero.availability}
           </p>
           <h1
