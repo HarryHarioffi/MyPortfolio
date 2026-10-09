@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 /**
  * A square cursor in the accent color, for mouse users only.
  * - Over text it keeps its size (16px) and inverts what's beneath (mix-blend-mode: difference).
- * - Over any other clickable thing it grows a little and sends slow waves out around it.
+ * - Over any other clickable thing it grows a little and turns lighter.
  * - Over anything with data-cursor="Label" it grows out to the right into a block that says
  *   the label, led by the icon named in data-cursor-icon ("eye" | "copy" | "check").
  *   Both are re-read every frame, so components can change them (e.g. "Copied") in place.
