@@ -7,7 +7,7 @@ export function AboutTeaser() {
   const t = home.aboutTeaser;
   return (
     <section id="about" className="border-t border-line">
-      <div className="mx-auto grid max-w-[1440px] gap-8 px-6 py-24 lg:grid-cols-12 lg:gap-x-10">
+      <div className="mx-auto grid max-w-page gap-8 px-6 py-24 lg:grid-cols-12 lg:gap-x-10">
         <div className="min-w-0 lg:col-span-12">
           <h2 className="text-[14px] font-medium text-accent">{t.heading}</h2>
           <p className="display mt-4 text-[clamp(40px,10.2vw,150px)] font-semibold leading-[0.95] tracking-[-0.035em]">

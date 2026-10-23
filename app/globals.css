@@ -24,6 +24,9 @@
   /* paper minus accent: under mix-blend-mode difference, this reads as the accent on paper. */
   --color-cursor-invert: #c48f88;
 
+  /* Page width: 1280px of content plus the 24px gutters. Every section, the header and the footer use it (max-w-page). */
+  --container-page: 83rem;
+
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 
@@ -323,4 +326,354 @@ html.has-cursor * {
 .site-cursor[data-mode="label"] .site-cursor-label {
   opacity: 1;
   transition-delay: 0.08s;
+}
+
+/*
+ * Case-study boards (components/case-study/Figure.tsx).
+ * Markers: numbered squares on the image. When a note is hovered, its marker stays and the rest dim.
+ */
+.figure-marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(20px, 2.3vw, 30px);
+  height: clamp(20px, 2.3vw, 30px);
+  translate: -50% -50%;
+  background: var(--color-accent);
+  color: var(--color-paper);
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgb(252 253 253 / 0.85), 0 6px 16px rgb(42 48 53 / 0.18);
+  pointer-events: none;
+  transition:
+    opacity 0.2s var(--ease-out-quart),
+    scale 0.25s var(--ease-out-quart);
+}
+.figure-marker[data-active="false"] {
+  opacity: 0.35;
+}
+.figure-marker[data-active="true"] {
+  scale: 1.18;
+}
+
+/* Full-size view of a board. A native <dialog>, so focus and Escape come for free. */
+.zoom-dialog {
+  width: min(96vw, 1760px);
+  max-width: none;
+  max-height: 94dvh;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  overflow: auto;
+  background: var(--color-paper);
+  box-shadow: 0 30px 80px rgb(20 28 40 / 0.35);
+}
+.zoom-dialog::backdrop {
+  background: rgb(42 48 53 / 0.72);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .zoom-dialog[open] {
+    animation: zoom-in 0.28s var(--ease-out-expo);
+  }
+  .zoom-dialog[open]::backdrop {
+    animation: fade-in 0.28s var(--ease-out-quart);
+  }
+}
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+/* The open dialog sits in the top layer, above the custom cursor. Hand back the native one. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+html.has-cursor:has(dialog[open]) .site-cursor {
+  opacity: 0 !important;
+}
+html.has-cursor:has(dialog[open]) .zoom-dialog,
+html.has-cursor:has(dialog[open]) .zoom-dialog * {
+  cursor: auto !important;
+}
+html.has-cursor:has(dialog[open]) .zoom-dialog button {
+  cursor: pointer !important;
+}
+
+/* A number or detail still to be filled in, e.g. "[XX%]". Marked so it can't pass for real data. */
+.slot-text {
+  padding: 0 0.25em;
+  background: var(--color-slot);
+  outline: 1px dashed var(--color-slot-line);
+  outline-offset: -1px;
+  color: var(--color-body);
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+ * Home intro (components/home/Intro.tsx). Sharp, like the rest of the site.
+ * Chips: on hover the accent floods in from where the pointer crossed the edge (--fx/--fy,
+ * set by Chip.tsx) and drains back out toward where it left. Keyboard focus fills from the middle.
+ */
+.chip {
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  padding: 0 0.3em 0.04em;
+  line-height: 1.3;
+  white-space: nowrap;
+  background: var(--color-chip);
+  color: var(--color-ink);
+  transition: color 0.3s var(--ease-out-quart);
+}
+.chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-accent);
+  clip-path: circle(0% at var(--fx, 50%) var(--fy, 50%));
+  transition: clip-path 0.45s var(--ease-out-expo);
+  pointer-events: none;
+}
+.chip:hover,
+.chip:focus-visible {
+  color: var(--color-paper);
+}
+.chip:hover::before,
+.chip:focus-visible::before {
+  clip-path: circle(160% at var(--fx, 50%) var(--fy, 50%));
+}
+
+/* The photo inside the sentence: tips back and grows from its base, with a little overshoot. */
+.portrait {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 1.55em;
+  height: 1.55em;
+  vertical-align: -0.42em;
+  overflow: hidden;
+  background: var(--color-accent-soft);
+  box-shadow:
+    0 1px 2px rgb(42 48 53 / 0.08),
+    0 4px 10px rgb(42 48 53 / 0.1);
+  transform-origin: 50% 100%;
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s var(--ease-out-quart);
+}
+.portrait:hover {
+  z-index: 2;
+  transform: rotate(-5deg) scale(1.8);
+  box-shadow:
+    0 2px 4px rgb(42 48 53 / 0.1),
+    0 12px 28px rgb(42 48 53 / 0.2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait {
+    transition: none;
+  }
+}
+.portrait-initials {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.48em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-accent);
+}
+
+/* A departures board: one dark tile per letter, split across the middle. */
+.flap-board {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  vertical-align: 0.14em;
+  font-size: 0.56em;
+  font-weight: 600;
+  line-height: 1;
+  background: color-mix(in oklab, var(--color-ink) 70%, black);
+  box-shadow: 0 6px 16px rgb(42 48 53 / 0.18);
+  perspective: 240px;
+  user-select: none;
+}
+.flap {
+  position: relative;
+  display: inline-flex;
+  width: 1.35ch;
+  height: 1.75em;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+.flap::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 1px;
+  background: rgb(0 0 0 / 0.45);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .flap-glyph {
+    animation: flap-down 0.11s var(--ease-out-quart);
+  }
+}
+@keyframes flap-down {
+  from {
+    transform: rotateX(75deg);
+    opacity: 0.35;
+  }
+}
+
+/* A small terminal inside the sentence. */
+.prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9ch;
+  padding: 0.42em 0.85em;
+  vertical-align: 0.14em;
+  font-size: 0.56em;
+  line-height: 1.35;
+  white-space: nowrap;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  box-shadow: 0 6px 16px rgb(42 48 53 / 0.18);
+}
+.prompt-caret {
+  display: inline-block;
+  width: 0.1em;
+  height: 1.1em;
+  margin-left: 0.08em;
+  vertical-align: -0.18em;
+  background: currentColor;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .prompt-caret {
+    animation: prompt-blink 1.05s steps(1) infinite;
+  }
+}
+@keyframes prompt-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/*
+ * Case-study diagrams (components/case-study/diagrams.tsx). InView sets data-inview="out" just
+ * before one scrolls in, then "in", and the parts follow in order of --i. Nothing is hidden
+ * until JavaScript has marked it out, and nothing moves with reduced motion. Individual
+ * translate and scale properties, so a utility's rotate on the same element still applies.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-inview] :is(.anim, .anim-pop, .anim-x) {
+    transition:
+      opacity 0.6s var(--ease-out-quart),
+      translate 0.7s var(--ease-out-expo),
+      scale 0.6s var(--ease-out-expo);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+  [data-inview="out"] .anim {
+    opacity: 0;
+    translate: 0 14px;
+  }
+  [data-inview="out"] .anim-pop {
+    opacity: 0;
+    scale: 0.6;
+  }
+  [data-inview="out"] .anim-x {
+    opacity: 0;
+    translate: -10px 0;
+  }
+  [data-inview] .anim-line {
+    transition: scale 1.6s var(--ease-out-quart) 0.1s;
+  }
+  [data-inview="out"] .anim-line {
+    scale: 1 0;
+  }
+  [data-inview="in"] .journey-pulse {
+    animation: journey-pulse 3.2s var(--ease-out-quart) 1.8s infinite;
+  }
+}
+
+/* The journey's track: down the numbers on phones, across them on wider screens. */
+.journey-track {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 13px;
+  width: 2px;
+  background: var(--color-line);
+}
+.journey-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform-origin: top;
+}
+.journey-pulse {
+  display: none;
+}
+@media (min-width: 48rem) {
+  .journey {
+    grid-template-columns: repeat(var(--steps), minmax(0, 1fr));
+  }
+  /* From the first number's centre to the last one's: the last column's width, less half a number. */
+  .journey-track {
+    top: 13px;
+    bottom: auto;
+    left: 14px;
+    right: calc((100% - (var(--steps) - 1) * 1.25rem) / var(--steps) - 14px);
+    width: auto;
+    height: 2px;
+  }
+  .journey-fill {
+    transform-origin: left;
+  }
+  .journey-pulse {
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--color-accent);
+    background: var(--color-paper);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 48rem) {
+  [data-inview="out"] .anim-line {
+    scale: 0 1;
+  }
+}
+@keyframes journey-pulse {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  12%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 8px);
+    opacity: 0;
+  }
+}
+
+/* Decision numerals: Bricolage at its narrowest width, so two digits sit tall in a small column. */
+.decision-numeral {
+  font-variation-settings: "opsz" 48, "wdth" 75;
 }

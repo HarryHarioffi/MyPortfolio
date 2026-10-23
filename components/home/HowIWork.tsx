@@ -6,7 +6,7 @@ import { ArrowIcon } from "@/components/ui/ArrowIcon";
 export function HowIWork() {
   const { heading, items } = home.howIWork;
   return (
-    <section className="mx-auto max-w-[1440px] px-6 pb-28">
+    <section className="mx-auto max-w-page px-6 pb-28">
       <h2 className="display border-b border-line pb-6 text-[clamp(32px,4vw,40px)] font-medium leading-[1.2] tracking-[-0.6px]">
         {heading}
       </h2>

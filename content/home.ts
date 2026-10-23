@@ -8,8 +8,23 @@ export const home = {
     availability: "Open to full-time roles, in India or abroad",
     headline: "I design how people stay in control of AI agents.",
     subhead:
-      "At The Cloud Company that has meant designing how teams decide what an agent knows and who can use it, and how an analyst sees what the agent already handled. When an idea depends on real data or timing, I prototype it in React.",
+      "At The Cloud Company that has meant designing the platform a company's teams build AI apps on, and the builder that lets business teams make AI assistants on their own data. When an idea depends on real data or timing, I prototype it in React.",
     primaryCta: "See the work",
+  },
+
+  /**
+   * The letter-style intro at the top of the home page (components/home/Intro.tsx). It took
+   * over from `hero` on 2026-10-21; `hero` and `facts` stay so the old Hero can come back.
+   */
+  intro: {
+    greeting: "Hello.",
+    // A square photo in public/. Until the file exists, the intro shows initials in its place.
+    photo: "/portrait.jpg",
+    flap: "PROTOTYPE",
+    // Typed into the little terminal, one after the other. Both come from the hero subhead.
+    dependsOn: ["real data", "timing"],
+    signoff: "It's nice to meet you.",
+    copied: "Email copied. Say hi.",
   },
 
   facts: [
@@ -19,9 +34,8 @@ export const home = {
   ],
 
   work: {
+    // Screen readers only: the grid of covers carries no visible heading.
     heading: "Work",
-    subline: "Five projects from The Cloud Company. Each one says what I owned and who I worked with.",
-    moreHeading: "More work",
   },
 
   howIWork: {
@@ -29,21 +43,21 @@ export const home = {
     items: [
       {
         title: "I keep the options I dropped",
-        body: "Every case study shows what I tried before the final design, and why it lost. On Heimdall I tested three layouts against one question: can an analyst find the next action in under five seconds? A chronological feed failed, because critical alerts sank under routine ones.",
-        href: "/work/heimdall#options",
-        linkLabel: "Heimdall's three layouts",
+        body: "Cashlens's landing page went through many layouts. A map of every page showed where things were but not why you'd go there, so the version that shipped groups pages by the question they answer.",
+        href: "/work/cashlens#options",
+        linkLabel: "Cashlens's two directions",
       },
       {
-        title: "If it depends on timing or real data, I build it",
-        body: "StrataAI's permissions backend didn't exist yet, so I prototyped the access model in React. Admins could try real cases, like removing someone mid-session, and we found problems in the model before the backend was built.",
-        href: "/work/strata-ai#decisions",
-        linkLabel: "The StrataAI prototype",
+        title: "I design in the terms it'll be built in",
+        body: "Logic.dev's canvas runs on React Flow, so I designed its nodes, handles and edges in React Flow's own model. Every interaction I handed over was one the engineers could build without translating.",
+        href: "/work/logic-dev#discovery",
+        linkLabel: "Designing for React Flow",
       },
       {
-        title: "I build parts other teams can reuse",
-        body: "I built Echo Desk's side panel with our front-end team as a shared shell with slots for content, and other screens now reuse it. Next time I'd write its usage notes while building it, not after.",
-        href: "/work/echo-desk#solution",
-        linkLabel: "The Echo Desk panel shell",
+        title: "I design the states, not just the screens",
+        body: "For Folio's iOS concept I built the folder as one component with closed, peek, open and locked states, then designed the empty, offline and pending screens around it.",
+        href: "/work/folio#decisions",
+        linkLabel: "Folio's folder states",
       },
     ],
   },
@@ -52,10 +66,5 @@ export const home = {
     heading: "Hariharasudhan, abridged",
     body: "That's my real name, all fourteen letters of it. Here I go by Harry Hari: Harry for Harry Potter, my favourite since I was a kid, and Hari from my own name.",
     linkLabel: "Read the unabridged version",
-  },
-
-  contact: {
-    heading: "I do my best work on teams building AI that people have to trust.",
-    body: "Open to full-time roles, in India or abroad. Email is the quickest way to reach me.",
   },
 } as const;

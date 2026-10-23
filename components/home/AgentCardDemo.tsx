@@ -55,7 +55,8 @@ const tokenColor = {
   punct: "text-muted",
 } as const;
 
-export function AgentCardDemo() {
+/** `compact` trims the canvas, for when the card sits beside text instead of headlining. */
+export function AgentCardDemo({ compact = false }: { compact?: boolean }) {
   const [view, setView] = useState<"design" | "code">("design");
   const [level, setLevel] = useState<Level>("view");
   const [size, setSize] = useState<{ w: number; h: number } | null>(null);
@@ -112,14 +113,14 @@ export function AgentCardDemo() {
             id={`${id}-panel-design`}
             aria-labelledby={`${id}-tab-design`}
             inert={view !== "design"}
-            className={`dot-grid flex min-h-[300px] items-center justify-center px-6 pb-8 pt-12 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-out-quart ${
+            className={`dot-grid flex items-center justify-center px-6 ${compact ? "min-h-[240px] pb-6 pt-10" : "min-h-[300px] pb-8 pt-12"} motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-out-quart ${
               view === "design" ? "opacity-100" : "translate-y-1 opacity-0"
             }`}
           >
             <SelectionFrame label={size ? `AgentCard · ${size.w} × ${size.h}` : "AgentCard"}>
               <div
                 ref={cardRef}
-                className="w-[272px] max-w-full border border-line bg-paper p-5 text-left shadow-[0_1px_2px_rgb(42_48_53/0.06)]"
+                className="w-max min-w-[272px] max-w-full border border-line bg-paper p-5 text-left shadow-[0_1px_2px_rgb(42_48_53/0.06)]"
               >
                 <div className="flex items-center gap-3">
                   <span className="flex size-8 shrink-0 items-center justify-center bg-accent-soft text-accent" aria-hidden="true">
@@ -146,11 +147,11 @@ export function AgentCardDemo() {
                   <div className="flex items-center justify-between gap-3">
                     <dt className="text-muted">Access</dt>
                     <dd className="flex items-center gap-2">
-                      <span className="text-ink">{agent.team}</span>
+                      <span className="whitespace-nowrap text-ink">{agent.team}</span>
                       <button
                         onClick={nextLevel}
                         aria-label={`Access level: can ${level}. Change it`}
-                        className="inline-flex h-7 items-center gap-1 bg-accent-soft px-2 font-medium text-accent transition-transform duration-150 ease-out-quart active:scale-[0.96]"
+                        className="inline-flex h-7 min-w-[8em] items-center justify-between gap-1 whitespace-nowrap bg-accent-soft px-2 font-medium text-accent transition-transform duration-150 ease-out-quart active:scale-[0.96]"
                       >
                         Can {level}
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
@@ -169,7 +170,7 @@ export function AgentCardDemo() {
             id={`${id}-panel-code`}
             aria-labelledby={`${id}-tab-code`}
             inert={view !== "code"}
-            className={`flex min-h-[300px] items-center bg-canvas py-6 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-out-quart ${
+            className={`flex items-center bg-canvas py-6 ${compact ? "min-h-[240px]" : "min-h-[300px]"} motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-out-quart ${
               view === "code" ? "opacity-100" : "-translate-y-1 opacity-0"
             }`}
           >
@@ -202,11 +203,13 @@ export function AgentCardDemo() {
         <span className="text-pretty">
           A made-up agent card. Both views render from the same props: change the access, then check the code.
         </span>
-        {level !== "view" && (
-          <button onClick={() => setLevel("view")} className="link-quiet shrink-0 font-medium text-ink">
-            Reset
-          </button>
-        )}
+        {/* Always laid out, only hidden while there's nothing to reset, so the caption never rewraps. */}
+        <button
+          onClick={() => setLevel("view")}
+          className={`link-quiet shrink-0 font-medium text-ink ${level === "view" ? "invisible" : ""}`}
+        >
+          Reset
+        </button>
       </figcaption>
       <p className="sr-only" aria-live="polite">
         Access is now can {level}.

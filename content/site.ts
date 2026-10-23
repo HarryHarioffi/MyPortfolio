@@ -14,12 +14,16 @@ export const site = {
     // Full profile URLs. A bare domain (e.g. "https://github.com/") is treated as unset and hidden.
     linkedin: "https://www.linkedin.com/in/hariharasudhan-shanmugam",
     github: "https://github.com/",
-    // Lives in public/. Replace the file to update it; the hero, contact and /about links hide if it's missing.
+    instagram: "https://www.instagram.com/harryhari.pvt/",
+    // Lives in public/, linked from /about. Replace the file to update it; the link hides if it's missing.
     resume: "/Hariharasudhan-Shanmugam-Resume.pdf",
   },
+  // `current`: the paths where a link shows as the page you're on. The home page is the work,
+  // so Work stays lit there and on every case study under /work.
   nav: [
-    { label: "Work", href: "/#work" },
-    { label: "About", href: "/about" },
+    { label: "Work", href: "/#work", current: ["/", "/work"] },
+    { label: "Lab", href: "/lab", current: ["/lab"] },
+    { label: "About", href: "/about", current: ["/about"] },
   ],
 } as const;
 
@@ -28,17 +32,18 @@ function isProfile(url: string): boolean {
   try {
     const { pathname, hostname } = new URL(url);
     const parts = pathname.split("/").filter(Boolean);
-    // linkedin.com/in/<handle> needs two segments; github.com/<handle> needs one.
+    // linkedin.com/in/<handle> needs two segments; github.com/<handle> and instagram.com/<handle> need one.
     return parts.length >= (hostname.includes("linkedin") ? 2 : 1);
   } catch {
     return false;
   }
 }
 
-/** LinkedIn and GitHub, only the ones that are real. */
+/** LinkedIn, GitHub and Instagram, only the ones that are real. */
 export function profileLinks(): { label: string; href: string }[] {
   return [
     { label: "LinkedIn", href: site.links.linkedin },
     { label: "GitHub", href: site.links.github },
+    { label: "Instagram", href: site.links.instagram },
   ].filter((l) => isProfile(l.href));
 }

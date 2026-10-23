@@ -58,6 +58,11 @@ export function Cursor() {
       shown = false;
       box.style.opacity = "0";
     };
+    // Scrolling moves the page under a still pointer. Re-read what's beneath it, or the
+    // cursor keeps saying "Open case study" over whatever scrolled in after the card.
+    const onScroll = () => {
+      if (shown) target = document.elementFromPoint(x, y);
+    };
     let down = false;
     const onDown = () => (down = true);
     const onUp = () => (down = false);
@@ -108,6 +113,8 @@ export function Cursor() {
     window.addEventListener("pointerdown", onDown);
     window.addEventListener("pointerup", onUp);
     document.addEventListener("pointerleave", onLeave);
+    // Capture, so scrolling inside an element (the code panel) counts too.
+    window.addEventListener("scroll", onScroll, { passive: true, capture: true });
     raf = requestAnimationFrame(tick);
 
     return () => {
@@ -117,6 +124,7 @@ export function Cursor() {
       window.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onUp);
       document.removeEventListener("pointerleave", onLeave);
+      window.removeEventListener("scroll", onScroll, { capture: true });
     };
   }, []);
 

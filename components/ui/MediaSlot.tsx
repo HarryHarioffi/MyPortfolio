@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import type { Media } from "@/content/types";
+import { LoopVideo } from "./LoopVideo";
 
 type Props = {
   media: Media;
@@ -11,14 +12,25 @@ type Props = {
   priority?: boolean;
   /** Drawn stand-in for when there is no file yet (covers). Without it, a labelled dashed slot shows. */
   art?: ReactNode;
+  /** Give a video a pause button. Leave off when the slot sits inside a link. */
+  controls?: boolean;
 };
 
 /**
  * Renders a real image or video when `media.src` is set. Otherwise it renders `art` if given,
  * or the dashed slot from the Figma template, labelled with what belongs there.
  */
-export function MediaSlot({ media, ratio, className = "", sizes = "(min-width: 1280px) 1200px, 100vw", priority, art }: Props) {
-  const style = ratio ? { aspectRatio: ratio } : undefined;
+export function MediaSlot({
+  media,
+  ratio,
+  className = "",
+  sizes = "(min-width: 1280px) 1200px, 100vw",
+  priority,
+  art,
+  controls,
+}: Props) {
+  // The file's own background shows while it loads, instead of the grey slot colour.
+  const style = ratio || media.tint ? { aspectRatio: ratio, backgroundColor: media.tint } : undefined;
   const fill = ratio ? "" : "h-full";
 
   if (!media.src && art) {
@@ -45,16 +57,14 @@ export function MediaSlot({ media, ratio, className = "", sizes = "(min-width: 1
   return (
     <div className={`relative overflow-hidden bg-slot ${fill} ${className}`} style={style}>
       {media.video ? (
-        <video
+        <LoopVideo
           className="absolute inset-0 size-full object-cover"
           src={media.src}
           poster={media.poster}
-          aria-label={media.alt}
-          muted
-          loop
-          playsInline
-          autoPlay
-          preload="metadata"
+          label={media.alt}
+          controls={controls}
+          priority={priority}
+          sizes={sizes}
         />
       ) : (
         <Image
@@ -62,7 +72,9 @@ export function MediaSlot({ media, ratio, className = "", sizes = "(min-width: 1
           alt={media.alt}
           fill
           sizes={sizes}
-          priority={priority}
+          // Next 16 deprecated `priority`; an above-the-fold image loads eagerly at high priority instead.
+          loading={priority ? "eager" : undefined}
+          fetchPriority={priority ? "high" : undefined}
           className="object-cover"
         />
       )}

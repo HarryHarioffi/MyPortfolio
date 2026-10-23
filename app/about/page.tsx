@@ -5,7 +5,6 @@ import { site } from "@/content/site";
 import { resumeHref } from "@/lib/files";
 import { NameSpecimen } from "@/components/about/NameSpecimen";
 import { Copy, Lead, Row } from "@/components/case-study/parts";
-import { LocalTime } from "@/components/home/LocalTime";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
 export const metadata: Metadata = {
@@ -36,12 +35,12 @@ function Timeline({ items, className = "" }: { items: readonly Entry[]; classNam
 }
 
 export default function AboutPage() {
-  const { name, intro, glance, whatIDo, workingWithMe, experience, offTheClock } = about;
+  const { name, intro, glance, whatIDo, workingWithMe, experience } = about;
   const resume = resumeHref();
 
   return (
     <>
-      <div className="mx-auto max-w-[1440px] px-6 pb-28 pt-14 md:pt-20">
+      <div className="mx-auto max-w-page px-6 pb-28 pt-14 md:pt-20">
         <h1 className="sr-only">
           {site.legalName}, also known as {site.name}
         </h1>
@@ -49,11 +48,17 @@ export default function AboutPage() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[minmax(0,34em)_minmax(0,27em)] lg:justify-between lg:gap-16">
           <p className="text-pretty text-lede text-ink">{intro.lede}</p>
-          <div className="flex flex-col gap-4 text-copy text-body">
-            <p className="text-pretty">{intro.stageName}</p>
-            <p>
-              {intro.official} Say it <span className="whitespace-nowrap font-medium text-ink">{name.pronunciation}</span>.
+          <div className="flex flex-col items-start gap-5 text-copy text-body">
+            <p className="text-pretty">
+              {intro.name} Say it <span className="whitespace-nowrap font-medium text-ink">{name.pronunciation}</span>.
             </p>
+            {/* The resume lives on this page only (not in the nav): here, and again under Experience. */}
+            {resume && (
+              <a href={resume} target="_blank" rel="noopener" className="group inline-flex items-center gap-2 font-medium text-ink">
+                <span className="link-draw">Resume (PDF)</span>
+                <ArrowIcon className="-rotate-45 transition-transform duration-300 ease-out-quart group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+            )}
           </div>
         </div>
 
@@ -64,12 +69,6 @@ export default function AboutPage() {
               <dd className="text-pretty text-copy text-ink">{g.value}</dd>
             </div>
           ))}
-          <div className="flex flex-col gap-1">
-            <dt className="text-[14px] font-medium text-muted">Based in</dt>
-            <dd className="text-copy text-ink">
-              {site.location} · <LocalTime timeZone={site.timeZone} />
-            </dd>
-          </div>
         </dl>
 
         <div className="mt-28 flex flex-col gap-24 lg:mt-32 lg:gap-32">
@@ -83,8 +82,8 @@ export default function AboutPage() {
               ))}
               <div className="mt-8 flex flex-wrap gap-x-7 gap-y-2 text-[15px] font-medium">
                 {[
-                  { label: "StrataAI", href: "/work/strata-ai" },
-                  { label: "ERP Procurement", href: "/work/erp-procurement" },
+                  { label: "Skillset", href: "/work/skillset" },
+                  { label: "Cashlens", href: "/work/cashlens" },
                 ].map((l) => (
                   <Link key={l.href} href={l.href} data-cursor="Open case study" data-cursor-icon="eye" className="group inline-flex items-center gap-2 text-ink">
                     <span className="link-quiet">{l.label}</span>
@@ -116,10 +115,6 @@ export default function AboutPage() {
               <Timeline items={about.education} className="mt-3" />
               <dl className="mt-8 grid gap-6 text-copy">
                 <div className="grid gap-1 sm:grid-cols-[160px_1fr] sm:gap-6">
-                  <dt className="font-medium text-ink">Recent work</dt>
-                  <dd className="max-w-[44em] text-pretty text-body">{about.recentWork}</dd>
-                </div>
-                <div className="grid gap-1 sm:grid-cols-[160px_1fr] sm:gap-6">
                   <dt className="font-medium text-ink">Toolkit</dt>
                   <dd className="text-body">{about.toolkit}</dd>
                 </div>
@@ -127,32 +122,13 @@ export default function AboutPage() {
                   <div className="grid gap-1 sm:grid-cols-[160px_1fr] sm:gap-6">
                     <dt className="font-medium text-ink">Full history</dt>
                     <dd>
-                      <a href={resume} className="link-quiet text-ink">
+                      <a href={resume} target="_blank" rel="noopener" className="link-quiet text-ink">
                         Resume (PDF)
                       </a>
                     </dd>
                   </div>
                 )}
               </dl>
-            </Row>
-          </section>
-
-          <section className="reveal">
-            <Row label="Off the clock">
-              <ul className="flex flex-wrap gap-2.5">
-                {offTheClock.interests.map((t) => (
-                  <li
-                    key={t}
-                    className="display border border-line bg-paper px-5 py-2 text-[clamp(20px,2.2vw,26px)] font-medium tracking-[-0.12px] transition-[transform,background-color] duration-200 ease-out-quart hover:-rotate-2 hover:bg-accent-soft"
-                  >
-                    {t}
-                  </li>
-                ))}
-                <li className="display border border-dashed border-accent px-5 py-2 text-[clamp(20px,2.2vw,26px)] font-medium tracking-[-0.12px] text-accent">
-                  Harry Potter, obviously
-                </li>
-              </ul>
-              <p className="mt-6 text-copy-lg text-muted">{offTheClock.note}</p>
             </Row>
           </section>
         </div>

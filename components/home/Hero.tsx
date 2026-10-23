@@ -14,7 +14,7 @@ export function Hero() {
   const resume = resumeHref();
 
   return (
-    <section className="mx-auto max-w-[1440px] px-6 pb-16 pt-14 md:pt-20">
+    <section className="mx-auto max-w-page px-6 pb-16 pt-14 md:pt-20">
       <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,500px)] lg:items-center lg:gap-16">
         <div>
           <p className="rise flex items-center gap-2.5 text-base font-medium text-accent" style={stagger(0)}>
@@ -39,7 +39,7 @@ export function Hero() {
               <ArrowIcon className="transition-transform duration-300 ease-out-quart group-hover:translate-x-1" />
             </Link>
             {resume ? (
-              <a href={resume} className="link-quiet text-muted hover:text-ink">
+              <a href={resume} target="_blank" rel="noopener" className="link-quiet text-muted hover:text-ink">
                 Resume (PDF)
               </a>
             ) : (
