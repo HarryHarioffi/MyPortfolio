@@ -5,8 +5,8 @@ compatibility_date = "2026-10-01"
 # Fill the id in with the one `wrangler kv namespace create SCORES` prints.
 [[kv_namespaces]]
 binding = "SCORES"
-id = "REPLACE_WITH_NAMESPACE_ID"
+id = "7652f528dd954eaa8f0e43e7049a0f4c"
 
 [vars]
 # The sites that may call this from a browser. localhost is for `npm run dev`.
-ALLOWED_ORIGINS = "https://hariharasudhans.online,http://localhost:3000"
+ALLOWED_ORIGINS = "https://harryhari.com,https://www.harryhari.com,http://localhost:3000"
