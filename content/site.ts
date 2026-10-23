@@ -2,7 +2,7 @@ export const site = {
   name: "Harry Hari",
   legalName: "Hariharasudhan S",
   role: "Design Engineer",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://hariharasudhans.online",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://harryhari.com",
   email: "shariharasudhan2002@gmail.com",
   location: "Tamil Nadu, India",
   timeZone: "Asia/Kolkata",
