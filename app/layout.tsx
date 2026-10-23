@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import Script from "next/script";
 import { ConsoleHello } from "@/components/layout/ConsoleHello";
 import { Cursor } from "@/components/layout/Cursor";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -62,6 +63,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <Cursor />
+        {process.env.NODE_ENV === "production" && (
+          // Microsoft Clarity (session recordings and heatmaps). lazyOnload keeps it off the critical path.
+          <Script id="clarity" strategy="lazyOnload">
+            {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wpxg41z5u1");`}
+          </Script>
+        )}
       </body>
     </html>
   );
