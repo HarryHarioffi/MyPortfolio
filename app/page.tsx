@@ -1,5 +1,6 @@
 import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { Intro } from "@/components/home/Intro";
+import { ScrollTopOnArrival } from "@/components/home/ScrollTopOnArrival";
 import { WorkList } from "@/components/home/WorkList";
 
 /*
@@ -11,6 +12,7 @@ import { WorkList } from "@/components/home/WorkList";
 export default function Home() {
   return (
     <>
+      <ScrollTopOnArrival />
       <Intro />
       <WorkList />
       <AboutTeaser />

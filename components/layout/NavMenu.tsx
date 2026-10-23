@@ -37,7 +37,7 @@ export function NavMenu({ items }: { items: readonly Item[] }) {
   }, [active]);
 
   return (
-    <ul className="flex items-center gap-7 text-muted">
+    <ul className="flex items-center gap-4 text-muted sm:gap-7">
       {items.map((item, i) => {
         const current = i === active;
         return (

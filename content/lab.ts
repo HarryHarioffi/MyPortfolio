@@ -1,43 +1,28 @@
-import type { Media } from "./types";
-
-/** One thing on /lab. */
-export type LabItem = {
-  name: string;
-  /** What it is, in one line. */
-  blurb: string;
-  year: number;
-  /** "Live", "Beta", "In progress"... shown next to the year. */
-  status?: string;
-  /** Where it opens: an app's own subdomain, or a repo or demo. Leave out until there's something to open. */
-  href?: string;
-  /** Leave `src` empty and a labelled placeholder shows instead. */
-  media: Media;
-};
-
-type Shelf = { heading: string; note: string; empty: string; items: LabItem[] };
+import type { Project } from "./types";
 
 /**
- * /lab: what I build outside client work. Apps are the bigger things, each on its own subdomain;
- * experiments are smaller. Add entries to `items`. A shelf with none shows its `empty` note.
+ * /lab: experiments, small things made to try an idea. Each is a cover with the name under it and
+ * the category and year beside it, like the work grid. Add entries to `items`; newest first.
+ * Covers are designed in Figma (page "Lab and Apps covers", file Harry-Hari) and exported at 1280x800.
  *
  * Example entry:
- *   { name: "Tabs", blurb: "A tab manager that groups by project.", year: 2026, status: "Beta",
- *     href: "https://tabs.hariharasudhans.online", media: { alt: "Tabs, grouped by project" } }
+ *   { name: "Tabs", category: "Browser extension", year: 2026, href: "https://tabs.example.com",
+ *     media: { src: "/lab/tabs/cover.webp", alt: "Tabs, grouped by project", width: 1280, height: 800 } }
  */
-export const lab: { heading: string; intro: string; apps: Shelf; experiments: Shelf } = {
-  heading: "Things I build for myself.",
-  intro:
-    "Side projects, outside client work: apps I'm building and publishing, and smaller experiments made to try an idea.",
-  apps: {
-    heading: "Apps",
-    note: "Each one runs on its own subdomain.",
-    empty: "The first app is on its way.",
-    items: [],
-  },
-  experiments: {
-    heading: "Experiments",
-    note: "Smaller things, made to learn something or just for fun.",
-    empty: "Experiments are on their way.",
-    items: [],
-  },
+export const lab: { heading: string; items: Project[] } = {
+  heading: "Things I try, to see if they work.",
+  items: [
+    {
+      name: "Folio Scrolling Video",
+      category: "Portfolio concept",
+      year: 2026,
+      href: "https://folio-scrolling-video.vercel.app",
+      media: {
+        src: "/lab/folio-scrolling-video/cover.webp",
+        width: 1280,
+        height: 800,
+        alt: "Folio Scrolling Video: a 3D monitor that opens up and becomes a lever machine and a rotary phone as the page scrolls",
+      },
+    },
+  ],
 };

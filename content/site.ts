@@ -22,7 +22,9 @@ export const site = {
   // so Work stays lit there and on every case study under /work.
   nav: [
     { label: "Work", href: "/#work", current: ["/", "/work"] },
+    { label: "Apps", href: "/apps", current: ["/apps"] },
     { label: "Lab", href: "/lab", current: ["/lab"] },
+    { label: "Play", href: "/play", current: ["/play"] },
     { label: "About", href: "/about", current: ["/about"] },
   ],
 } as const;

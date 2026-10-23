@@ -673,7 +673,142 @@ html.has-cursor:has(dialog[open]) .zoom-dialog button {
   }
 }
 
+/* The tracking slider (components/play/TrackingGame.tsx): a hairline with a square thumb, like the curve editor's handles. */
+.track-range {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.track-range:disabled {
+  cursor: default;
+}
+.track-range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--color-line);
+}
+.track-range::-moz-range-track {
+  height: 2px;
+  background: var(--color-line);
+}
+.track-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -9px;
+  border: 2px solid var(--color-accent);
+  background: var(--color-paper);
+  box-shadow: 0 2px 6px rgb(42 48 53 / 0.2);
+  transition: transform 0.15s var(--ease-out-quart);
+}
+.track-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-accent);
+  border-radius: 0;
+  background: var(--color-paper);
+  box-shadow: 0 2px 6px rgb(42 48 53 / 0.2);
+}
+.track-range:not(:disabled):hover::-webkit-slider-thumb,
+.track-range:not(:disabled):active::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+.track-range:disabled::-webkit-slider-thumb {
+  border-color: var(--color-faint);
+  box-shadow: none;
+}
+.track-range:disabled::-moz-range-thumb {
+  border-color: var(--color-faint);
+  box-shadow: none;
+}
+.track-range:focus-visible {
+  outline: none;
+}
+.track-range:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+.track-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* The result card slides up from the canvas floor, and the how-to card fades down from its button. */
+@media (prefers-reduced-motion: no-preference) {
+  .result-in {
+    animation: result-in 0.45s var(--ease-out-expo) both;
+  }
+  .how-in {
+    animation: how-in 0.2s var(--ease-out-quart) both;
+  }
+}
+@keyframes result-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes how-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+/*
+ * The top-three splash on /play (components/play/Splash.tsx): the panel fades in, the trophy
+ * pops in with a little overshoot, and the words rise just after it.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .splash {
+    animation: splash-fade 0.25s var(--ease-out-quart) both;
+  }
+  .splash-trophy {
+    animation: splash-pop 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  }
+  .splash-text {
+    animation: splash-rise 0.5s var(--ease-out-expo) 0.12s both;
+  }
+}
+@keyframes splash-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes splash-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-12deg);
+  }
+}
+@keyframes splash-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
 /* Decision numerals: Bricolage at its narrowest width, so two digits sit tall in a small column. */
 .decision-numeral {
   font-variation-settings: "opsz" 48, "wdth" 75;
+}
+
+/* The mobile menu (components/layout/MobileMenu.tsx): the panel drops in and the page behind it dims. */
+@media (prefers-reduced-motion: no-preference) {
+  .menu-panel {
+    animation: menu-in 0.24s var(--ease-out-quart);
+  }
+  .menu-scrim {
+    animation: fade-in 0.24s var(--ease-out-quart);
+  }
+}
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
 }

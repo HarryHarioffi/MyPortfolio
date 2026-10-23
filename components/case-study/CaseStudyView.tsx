@@ -485,9 +485,6 @@ export function CaseStudyView({ study }: { study: CaseStudy }) {
     <div className="mx-auto grid max-w-page gap-0 px-6 pb-32 pt-10 lg:grid-cols-[165px_1fr] lg:gap-[27px]">
       <SectionIndex items={sections} />
       <div className="mx-auto flex w-full min-w-0 max-w-[880px] flex-col gap-28 lg:gap-36">
-        <Link href="/#work" className="text-[14px] font-medium text-muted hover:text-ink lg:hidden">
-          <span aria-hidden="true">←</span> Back
-        </Link>
         <Overview c={study} />
         <Problem c={study} />
         <Discovery c={study} />

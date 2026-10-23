@@ -25,6 +25,15 @@ export function ChipLink({ href, children }: { href: string; children: ReactNode
   );
 }
 
+/** The same chip and hover fill, with nothing to click: for words that only want the touch. */
+export function PlainChip({ children }: { children: ReactNode }) {
+  return (
+    <span className="chip" {...edge}>
+      {children}
+    </span>
+  );
+}
+
 /** Copies the email. Both labels share one grid cell, so the chip keeps its width when it swaps. */
 export function CopyChip({ email, label, done }: { email: string; label: string; done: string }) {
   const [copied, setCopied] = useState(false);

@@ -3,7 +3,7 @@ import { home } from "@/content/home";
 import { site } from "@/content/site";
 import { publicFileExists } from "@/lib/files";
 import { AgentCardDemo } from "./AgentCardDemo";
-import { ChipLink, CopyChip } from "./Chip";
+import { PlainChip } from "./Chip";
 import { Portrait } from "./Portrait";
 import { SplitFlap } from "./SplitFlap";
 import { TypedPrompt } from "./TypedPrompt";
@@ -37,9 +37,9 @@ export function Intro() {
             <span className="whitespace-nowrap">
               {site.name} <Portrait src={photo} name={site.name} />,
             </span>{" "}
-            a <ChipLink href="/about">design engineer</ChipLink> at {site.company}, designing how people{" "}
+            a <PlainChip>design engineer</PlainChip> at {site.company}, designing how people{" "}
             <span className="whitespace-nowrap">
-              stay in control of <ChipLink href="/#work">AI agents</ChipLink>.
+              stay in control of <PlainChip>AI agents</PlainChip>.
             </span>
           </p>
           <p className="rise mt-[0.7em] text-pretty" style={stagger(2)}>
@@ -53,7 +53,7 @@ export function Intro() {
             it in React.
           </p>
           <p className="rise mt-[0.7em]" style={stagger(3)}>
-            <CopyChip email={site.email} label={intro.signoff} done={intro.copied} />
+            <PlainChip>{intro.signoff}</PlainChip>
           </p>
           {/* The availability line (home.hero.availability, with the pulsing dot) is hidden for now. */}
         </div>

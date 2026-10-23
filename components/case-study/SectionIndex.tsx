@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { IndexItem } from "@/content/types";
 
@@ -51,11 +50,6 @@ export function SectionIndex({ items }: { items: IndexItem[] }) {
   return (
     <nav aria-label="Case study sections" className="sticky top-28 hidden self-start lg:block">
       <ul className="flex flex-col gap-4 whitespace-nowrap text-[14px] font-medium">
-        <li>
-          <Link href="/#work" className="text-muted transition-colors hover:text-ink">
-            <span aria-hidden="true">←</span> Back
-          </Link>
-        </li>
         {items.map((item) => {
           const inside = item.id === active || !!item.children?.some((c) => c.id === active);
           return (

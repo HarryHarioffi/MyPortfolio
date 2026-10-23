@@ -23,6 +23,11 @@ npm run lint
 | `components/ui/MediaSlot.tsx` | Renders your image or video. Without one, covers show `CoverArt` (a drawn schematic) and other slots show the dashed placeholder. |
 | `components/home/AgentCardDemo.tsx` | The hero's design/code demo. Both views render from the same props. |
 | `components/about/NameSpecimen.tsx` | The Legal / Stage name swap on `/about`. |
+| `content/play.ts` | The games on `/play`: each one's tab name and "How to play" steps. |
+| `lib/ease-match.ts`, `lib/pen-tool.ts`, `lib/tracking.ts` | The three games' rules, targets and scoring. Plain TypeScript, shared by the game and the scores service. `lib/play-score.ts` marks a finished run; `lib/leaderboard.ts` is how a board orders itself. |
+| `components/play/*` | `/play`, laid out like a design tool's window: `PlayArena` (game tabs, difficulty, canvas, scoreboard panel), one component per game, the curve editor, the podium and the top-three splash. |
+| `components/layout/Breadcrumb.tsx` | The header's trail ("Harry Hari / Work / Skillset"). Sections come from the nav in `content/site.ts`; titles of pages below them are built in `SiteHeader.tsx`. |
+| `workers/scores/` | The scoreboard's server (a Cloudflare Worker), one board per game and difficulty. Not part of the site build. See its README. Until it is deployed and `NEXT_PUBLIC_SCORES_URL` is set, each board keeps the scores played on that device. |
 
 ## Add a case study
 

@@ -1,0 +1,12 @@
+name = "hh-scores"
+main = "index.ts"
+compatibility_date = "2026-10-01"
+
+# Fill the id in with the one `wrangler kv namespace create SCORES` prints.
+[[kv_namespaces]]
+binding = "SCORES"
+id = "REPLACE_WITH_NAMESPACE_ID"
+
+[vars]
+# The sites that may call this from a browser. localhost is for `npm run dev`.
+ALLOWED_ORIGINS = "https://hariharasudhans.online,http://localhost:3000"

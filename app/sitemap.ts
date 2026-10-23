@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: site.url, lastModified: new Date() },
     { url: `${site.url}/lab`, lastModified: new Date() },
+    { url: `${site.url}/apps`, lastModified: new Date() },
+    { url: `${site.url}/play`, lastModified: new Date() },
     { url: `${site.url}/about`, lastModified: new Date() },
     ...caseStudies.map((c) => ({ url: `${site.url}/work/${c.slug}`, lastModified: new Date() })),
   ];

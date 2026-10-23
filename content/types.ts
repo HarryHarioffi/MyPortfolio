@@ -165,3 +165,15 @@ export type SectionId =
 
 /** An entry in the section index. Children are the subsections under it. */
 export type IndexItem = { id: string; label: string; children?: { id: string; label: string }[] };
+
+/** One thing on /lab or /apps: a cover, a name, and what kind of thing it is. */
+export type Project = {
+  name: string;
+  /** What kind of thing it is, in a few words. Shown in grey beside the year, like a case study's domain. */
+  category: string;
+  year: number;
+  /** Where it opens: the live site or the app's own link. Leave out until there's something to open. */
+  href?: string;
+  /** Leave `src` empty and a labelled placeholder shows instead. */
+  media: Media;
+};
