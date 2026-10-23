@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ConsoleHello } from "@/components/layout/ConsoleHello";
 import { Cursor } from "@/components/layout/Cursor";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -63,6 +65,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <Cursor />
+        <Analytics />
+        <SpeedInsights />
         {process.env.NODE_ENV === "production" && (
           // Microsoft Clarity (session recordings and heatmaps). lazyOnload keeps it off the critical path.
           <Script id="clarity" strategy="lazyOnload">
